@@ -1,6 +1,6 @@
 # Can clients trust an AI answer about segment data?
 
-*A case study in testing AI answers over geodemographic data, prepared for RDA Research. October 2026.*
+*A case study in testing AI answers over geodemographic data, prepared by Ratana Sovann. October 2026.*
 
 ## Summary
 
