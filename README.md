@@ -1,6 +1,6 @@
 # MCP Answer Quality Harness
 
-A tiny local **MCP server** that serves a small Sydney suburb table built from the ABS 2021 Census, plus a **20-question eval** that checks three things about a model's answers:
+A tiny local **MCP server** that serves a small Sydney suburb table built from the ABS 2021 Census, plus a **40-question eval** that checks three things about a model's answers:
 
 1. **Grounded**: does it answer only from the data (no made-up numbers)?
 2. **Modelled**: when a number is an estimate, does it say so?
@@ -15,13 +15,14 @@ pip install -r requirements.txt
 python -m pytest -q                     # checks the server and scorer, no API key needed
 python eval/run_eval.py                 # Claude Haiku 4.5, plain prompt
 python eval/run_eval.py --prompt guarded
+python eval/run_eval.py --repeats 5     # each question 5 times: average and range
 ```
 
 By default the eval runs the model through the **Claude Code CLI** (`claude -p`), using the login Claude Code already has. That means it works in a Claude Code cloud session or on a laptop with Claude Code installed, with no API key. To use an API key instead: `export ANTHROPIC_API_KEY=sk-ant-...` and add `--backend sdk`.
 
-Latest results: [`results/SUMMARY.md`](results/SUMMARY.md).
+Latest results: [`results/SUMMARY.md`](results/SUMMARY.md). Case study (problem, method, results, proposed set-up): [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md).
 
-Each run gets its own folder, `results/<date>_<time>_<model>_<prompt>/`, holding `run.jsonl` (raw answers) and `scorecard.md` (the results table with failure examples). Every run also adds one row to `results/history.md`, so you can watch the scores change as the project grows. To save somewhere else, pass `--out-dir <folder>` or set `EVAL_RESULTS_DIR`.
+Each run gets its own folder, `results/<date>_<time>_<model>_<prompt>/`, holding `run.jsonl` (raw answers), `scorecard.md` (the results table with failure examples) and `marking_sheet.csv` (every answer, for marking by hand). Every run also adds one row to `results/history.md`, so you can watch the scores change as the project grows. To save somewhere else, pass `--out-dir <folder>` or set `EVAL_RESULTS_DIR`.
 
 ## The data (`data/`)
 
@@ -54,12 +55,16 @@ To use it in Claude Desktop, add it to `claude_desktop_config.json`:
 
 ## The eval (`eval/`)
 
-- `questions.json`: 20 questions. 8 grounded, 6 modelled, 6 out of scope.
+- `questions.json`: 40 questions: 16 grounded, 12 modelled, 12 out of scope. Half are basic. The other half are marked `"level": "hard"` and each sets a trap (a wrong premise, a near-duplicate column, a tie, a half-answerable question), described in its `trap` field.
+- Any answer that quotes a 2026 estimate must say it's modelled, whatever the question.
 - `run_eval.py`: gives the model the server as its only tool and runs each question (`--backend cli` or `sdk`).
 - `score.py`: rule-based scorer.
-  - Grounded: expected numbers/names appear, and **every number in the answer exists in the data** (or in the question).
+  - Grounded: expected numbers/names appear, the model **called the tool**, and **every number in the answer exists in the data** (or in the question), or is a simple sum on numbers the answer quoted (a difference, total, percentage, or weekly to yearly). Those calculated numbers pass but are listed in the scorecard so you can check them.
   - Modelled: same, plus words like "modelled", "estimate" or "projected".
   - Out of scope: a "the data doesn't cover this" phrase, and no invented numbers.
-- Two prompts: `plain` (what a typical connector user gets) and `guarded` (explicit grounding rules), so you can see how much the prompt matters.
+- `agreement.py`: checks the checker. Mark answers yourself in a run's `marking_sheet.csv` (type `pass` or `fail` in `your_verdict`), then run `python eval/agreement.py <that file>` to see how often the scorer agrees with you, and where.
+- `judge.py`: a second opinion. An AI judge (Claude Sonnet 5.5 by default) grades every answer of a run with a one-line reason, and `judge_report.md` shows where it and the rules disagree.
+- `review_queue.py`: the "both, smart" set-up replayed on a judged run. Rules check every answer, the judge checks only risky ones (rule failures, lists and rankings, refusals, explanations, plus a 5% sample), and `review_queue.csv` lists what a person should review, disagreements first.
+- Three prompts: `plain` (what a typical connector user gets), `guarded` (explicit grounding rules) and `guarded_v2` (guarded plus fixes for the gaps the hard questions found), so you can see how much the prompt matters.
 
-**Known scorer limits:** it's keyword and number matching, not a judge model. A made-up number that happens to equal another value in the table slips through, and an unusual refusal phrasing can be marked as a fail. Read the failure examples before trusting the score.
+**Known scorer limits:** it's keyword and number matching, not a judge model. A made-up number that happens to equal another value in the table (or a sum of quoted ones) slips through, and an unusual refusal phrasing can be marked as a fail. Read the failure examples, and mark some answers yourself with `agreement.py`, before trusting the score.

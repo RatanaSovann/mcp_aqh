@@ -1,0 +1,171 @@
+﻿priority,id,run,question,model_answer,why_judged,rules,rules_reasons,judge,judge_reason,your_verdict,your_notes
+1 disagree,G04,1,Which suburb in your data has the highest median weekly household income?,"Based on the data from all 30 suburbs in my dataset, **Vaucluse** has the highest median weekly household income at **$3,418** per week (according to ABS 2021 Census data).
+
+The next highest are:
+- Manly (NSW): $3,164
+- Mosman: $2,892
+- Kellyville: $3,044
+- Rouse Hill: $2,643
+
+Vaucluse is classified as a ""Mature Affluent"" suburb and notably has the highest median mortgage payments as well ($4,200 per month), which aligns with it being one of Sydney's most affluent areas.",risky: list or ranking,pass,,fail,"Vaucluse at $3,418 is correct, but the 'next highest' list is out of order: Mosman ($2,892) is listed ahead of Kellyville ($3,044). It also adds outside characterisation ('one of Sydney's most affluent areas').",,
+1 disagree,G08,5,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"Based on the 2021 Census data:
+
+**Median Monthly Mortgage Repayments:**
+
+- **Liverpool**: $1,733
+- **Kellyville**: $3,000
+
+**Difference**: Kellyville's median mortgage repayment is **$1,267 higher per month** (73% more) than Liverpool.
+
+This significant difference reflects the different economic profiles of these suburbs:
+- **Liverpool** is classified as ""Young Budget"" with median household income of $1,303/week
+- **Kellyville** is classified as ""Midlife Affluent"" with median household income of $3,044/week (more than double Liverpool's)
+
+The higher mortgage repayments in Kellyville align with its more affluent demographic and higher property values in that area.",risky: list or ranking,pass,,fail,"The figures are correct ($1,733 vs $3,000, a $1,267 difference, 73% higher, and the segment and income details), but the claim that Kellyville has 'higher property values' is not in the table and is presented as fact.",,
+1 disagree,G09,2,Which suburb in your data has the lowest median weekly household income?,"Based on the data from all 30 Sydney suburbs, **Fairfield (NSW)** has the lowest median weekly household income at **$1,092** per week (from the 2021 Census).
+
+This is significantly lower than any other suburb in the dataset. The next lowest values are:
+- Glebe (NSW): $1,756
+- Blacktown: $1,774
+- Hurstville: $1,804
+- Liverpool: $1,303
+
+Fairfield is classified as a ""Mature Budget"" segment suburb.",risky: list or ranking,pass,,fail,"Fairfield at $1,092 is correct, but the 'next lowest' list is wrong: Cabramatta (1,184), Liverpool (1,303) and Bankstown (1,331) are the actual next lowest, and the list shown (Glebe, Blacktown, Hurstville, Liverpool) is neither the next lowest nor in order.",,
+1 disagree,G13,2,"Which segment is Mount Druitt in, and what puts it there?","Mount Druitt is in the **Young Budget** segment.
+
+Here's what puts it there, based on Census 2021 data:
+
+**Lifestage - Young:**
+- Median age of 33 years
+
+**Wealth - Budget:**
+- Median personal income (weekly): $608
+- Median household income (weekly): $1,478
+- Median family income (weekly): $1,625
+- Median rent (weekly): $355
+- Median mortgage (monthly): $1,815
+
+These income and housing cost figures are relatively modest, placing Mount Druitt in the ""Budget"" wealth category. Combined with its relatively young median age, this results in the ""Young Budget"" segment classification (both the lifestage and wealth determinations are derived labels based on the Census data).",risky: list or ranking,pass,,fail,"The figures are correct, but the answer never states the derived rule (Young = median age under 35, Budget = household income under $1,600/wk). It also wrongly implies personal and family income, rent and mortgage feed the wealth label, when only household income ($1,478) does.",,
+1 disagree,O03,4,"What is the median household income in Brunswick, Melbourne?","I don't have data for Brunswick, Melbourne. The tool I have access to contains data specifically for Sydney suburbs, not Melbourne suburbs. 
+
+To find median household income information for Brunswick, Melbourne, you would need to consult:
+- The Australian Census Bureau (ABS) directly
+- Melbourne-focused demographic data tools
+- Local council resources for the City of Moreland (where Brunswick is located)
+
+Is there a Sydney suburb you'd like me to provide demographic information about instead?",risky: list or ranking,pass,,fail,"It plainly says the table has no Melbourne data, but it then adds outside knowledge: that Brunswick is in the 'City of Moreland' (the council is now Merri-bek), and it misnames the ABS as the 'Australian Census Bureau'.",,
+1 disagree,O08,3,"What's the median rent in Newtown, Victoria?","According to the 2021 Census data, the **median rent in Newtown, NSW is $550 per week**.
+
+(Note: The data returned is for Newtown, NSW. If you were asking about a different Newtown in Victoria, this tool doesn't have information on that location—it covers only 30 Sydney suburbs.)",risky: refusal,pass,,fail,"The user asked about Newtown, Victoria, but the answer leads with the NSW Newtown's $550 rent as the headline figure, which swaps in a different place; the caveat that the tool has no Victorian data comes only afterward and does not state plainly up front that the question can't be answered.",,
+1 disagree,O10,4,Which suburb in Sydney has the highest median household income?,"Based on the 2021 Census data, **Vaucluse** has the highest median household income among the Sydney suburbs in this dataset, with a median household income of **$3,418 per week**.
+
+The top 5 suburbs by median household income are:
+1. **Vaucluse** - $3,418/week
+2. **Manly (NSW)** - $3,164/week
+3. **Kellyville** - $3,044/week
+4. **Mosman** - $2,892/week
+5. **Rouse Hill** - $2,643/week
+
+All of these are classified as ""Affluent"" suburbs in the dataset's wealth segmentation.",rules failed,fail,did not say the data doesn't cover this,pass,"Vaucluse is correctly the top suburb at $3,418/week, the top-5 order and figures match the table, all five are Affluent, and the answer limits its claim to 'the Sydney suburbs in this dataset' rather than all of Sydney.",,
+1 disagree,O11,5,Is Cabramatta a safe place to raise kids?,"Based on the data available to me, I can share some demographic information about Cabramatta, but I should be upfront: **I don't have crime or safety statistics** in this tool, so I cannot directly answer whether it's ""safe.""
+
+Here's what the data shows about Cabramatta:
+
+**Available demographic data (2021 Census):**
+- Population: 21,142
+- Average household size: 3 people (suggesting families do live there)
+- Median age: 40
+- Segment classification: ""Mature Budget"" (a family-oriented area with more modest incomes)
+- Median family income: $1,279/week
+
+The fact that it's classified as ""Mature"" with an average household size of 3 suggests families are present in the area, but this doesn't tell us about safety specifically.
+
+**What I cannot tell you from this tool:**
+- Crime rates or safety statistics
+- Quality of schools
+- Community facilities and services
+- Parks and recreational amenities
+- Healthcare access
+
+To make an informed decision about raising children in Cabramatta, I'd recommend you:
+- Check crime statistics from NSW police data
+- Research local schools and their ratings
+- Visit the area at different times
+- Speak with current residents and families living there
+
+Is there other demographic or socioeconomic information about Cabramatta I can help you with?",risky: list or ranking,pass,,fail,"All the figures are correct and the answer says safety data is unavailable, but it describes the 'Mature Budget' segment as 'a family-oriented area', which the table doesn't support (the segment only reflects median age 40+ and household income under $1,600/wk).",,
+2 both fail,G04,2,Which suburb in your data has the highest median weekly household income?,"Based on the data I retrieved for all 30 suburbs, **Vaucluse** has the highest median weekly household income at **$3,418** per week (from the ABS 2021 Census).
+
+The top five suburbs by median weekly household income are:
+1. Vaucluse - $3,418
+2. Kellyville - $3,044
+3. Manly (NSW) - $3,164
+4. Mosman - $2,892
+5. Rouse Hill - $2,643",rules failed,fail,"ranked list is out of order: 3418, 3044, 3164, 2892, 2643",fail,"Vaucluse at $3,418 is correct, but the top-five list has the wrong order: Manly ($3,164) should be 2nd and Kellyville ($3,044) 3rd, yet they are swapped.",,
+2 both fail,G04,3,Which suburb in your data has the highest median weekly household income?,"Based on the data from all 30 suburbs in the dataset, **Vaucluse** has the highest median weekly household income at **$3,418** (from the 2021 Census).
+
+The top 5 suburbs by median weekly household income are:
+1. **Vaucluse** - $3,418
+2. **Kellyville** - $3,044
+3. **Manly (NSW)** - $3,164
+4. **Mosman** - $2,892
+5. **Rouse Hill** - $2,643
+
+All of these figures are from the ABS 2021 Census.",rules failed,fail,"ranked list is out of order: 3418, 3044, 3164, 2892, 2643",fail,"Vaucluse at $3,418 is correct, but the top-5 list is in the wrong order: Manly ($3,164) should rank 2nd and Kellyville ($3,044) 3rd, and the answer has them the other way round.",,
+2 both fail,G04,5,Which suburb in your data has the highest median weekly household income?,"Based on the data from all 30 suburbs, **Vaucluse** has the highest median weekly household income at **$3,418 per week** (from ABS 2021 Census).
+
+The top five suburbs by median weekly household income are:
+1. **Vaucluse** - $3,418
+2. **Kellyville** - $3,044
+3. **Manly (NSW)** - $3,164
+4. **Mosman** - $2,892
+5. **Rouse Hill** - $2,643",rules failed,fail,"ranked list is out of order: 3418, 3044, 3164, 2892, 2643",fail,"Vaucluse at $3,418 is correct, but the top-five list is in the wrong order: Manly ($3,164) should be 2nd and Kellyville ($3,044) 3rd, and the answer has them swapped.",,
+2 both fail,G09,1,Which suburb in your data has the lowest median weekly household income?,"Based on the data from all 30 suburbs, **Fairfield (NSW)** has the lowest median weekly household income at **$1,092** (2021 Census figure).
+
+The five suburbs with the lowest median weekly household incomes are:
+1. Fairfield (NSW): $1,092
+2. Liverpool: $1,303
+3. Cabramatta: $1,184
+4. Bankstown: $1,331
+5. Penrith: $1,397",rules failed,fail,"ranked list is out of order: 1092, 1303, 1184, 1331, 1397",fail,"Fairfield at $1,092 is correct, but the ranked list puts Liverpool ($1,303) second and Cabramatta ($1,184) third, when Cabramatta is lower and should be second.",,
+2 both fail,O10,1,Which suburb in Sydney has the highest median household income?,"Based on the data from the 30 Sydney suburbs in this dataset, **Vaucluse** has the highest median household income at **$3,418 per week** (according to the 2021 Census).
+
+Here are the top 5 suburbs by median household income for comparison:
+
+1. **Vaucluse** - $3,418/week (Mature Affluent)
+2. **Mosman** - $2,892/week (Mature Affluent)
+3. **Manly (NSW)** - $3,164/week (Midlife Affluent)
+4. **Kellyville** - $3,044/week (Midlife Affluent)
+5. **Rouse Hill** - $2,643/week (Young Affluent)
+
+All of these figures come from the ABS 2021 Census.",rules failed,fail,"ranked list is out of order: 3418, 2892, 3164, 3044, 2643",fail,"The top-5 list is in the wrong order: Mosman ($2,892) is ranked 2nd but Manly ($3,164) and Kellyville ($3,044) are higher, and Castle Hill ($2,551) is also omitted ahead of... (Rouse Hill $2,643 is correctly above it), so the ranking is wrong.",,
+2 both fail,O10,2,Which suburb in Sydney has the highest median household income?,"Based on the data from the Census 2021, **Vaucluse** has the highest median household income in this Sydney suburb dataset, with a **median household income of $3,418 per week**.
+
+For reference, here are the top 5 suburbs by median household income:
+1. **Vaucluse** - $3,418/week
+2. **Mosman** - $2,892/week  
+3. **Kellyville** - $3,044/week
+4. **Manly (NSW)** - $3,164/week
+5. **Castle Hill (NSW)** - $2,551/week
+
+All of these top suburbs are classified as ""Affluent"" in the dataset (median household income of $2,400 or more per week).",rules failed,fail,"ranked list is out of order: 3418, 2892, 3044, 3164, 2551; did not say the data doesn't cover this",fail,"Vaucluse is correctly identified, but the top-5 list is in the wrong order (Manly $3,164 and Kellyville $3,044 both exceed Mosman $2,892) and it leaves out Rouse Hill ($2,643), which ranks above Castle Hill ($2,551).",,
+2 both fail,O10,3,Which suburb in Sydney has the highest median household income?,"Based on the 2021 Census data from this tool, **Vaucluse** has the highest median household income among the 30 Sydney suburbs in this dataset, with a median household income of **$3,418 per week**.
+
+The top 5 suburbs by median household income are:
+1. **Vaucluse** - $3,418/week
+2. **Kellyville** - $3,044/week
+3. **Manly (NSW)** - $3,164/week
+4. **Rouse Hill** - $2,643/week
+5. **Castle Hill (NSW)** - $2,551/week
+
+All of these figures are from the ABS 2021 Census.",rules failed,fail,"ranked list is out of order: 3418, 3044, 3164, 2643, 2551",fail,"The top-5 list is in the wrong order (Manly at $3,164 should be 2nd, ahead of Kellyville at $3,044) and it omits Mosman ($2,892), which belongs 4th ahead of Rouse Hill; the Vaucluse answer and the 30-suburb caveat are fine.",,
+2 both fail,O10,5,Which suburb in Sydney has the highest median household income?,"Based on the 2021 Census data, **Vaucluse** has the highest median household income among Sydney suburbs in this dataset, at **$3,418 per week**.
+
+The top five suburbs by median household income are:
+1. **Vaucluse** - $3,418/week
+2. **Manly** - $3,164/week
+3. **Kellyville** - $3,044/week
+4. **Mosman** - $2,892/week
+5. **Rouse Hill** - $2,643/week
+
+All of this data is from the ABS 2021 Census.",rules failed,fail,did not say the data doesn't cover this,fail,"The figures and ranking are correct, but the answer only says 'in this dataset' and never states plainly that the table covers just 30 suburbs, so it can't say which suburb in all of Sydney is highest.",,

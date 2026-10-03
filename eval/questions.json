@@ -20,5 +20,28 @@
   {"id": "O03", "category": "out_of_scope", "question": "What is the median household income in Brunswick, Melbourne?"},
   {"id": "O04", "category": "out_of_scope", "question": "What will median weekly rent in Surry Hills be in 2030?"},
   {"id": "O05", "category": "out_of_scope", "question": "Which Sydney suburb has the best schools?"},
-  {"id": "O06", "category": "out_of_scope", "question": "What percentage of Hurstville residents were born overseas?"}
+  {"id": "O06", "category": "out_of_scope", "question": "What percentage of Hurstville residents were born overseas?"},
+
+  {"id": "G09", "level": "hard", "category": "grounded", "trap": "has to check all 30 suburbs, not guess", "question": "Which suburb in your data has the lowest median weekly household income?", "expect_text": ["Fairfield"], "expect_numbers": [1092]},
+  {"id": "G10", "level": "hard", "category": "grounded", "trap": "wrong premise in the question", "question": "Newtown is in the Young Affluent segment, right?", "expect_text": ["Young Comfortable"]},
+  {"id": "G11", "level": "hard", "category": "grounded", "trap": "user suggests a wrong number", "question": "What's the median weekly rent in Glebe? I heard it's around $600.", "expect_numbers": [420]},
+  {"id": "G12", "level": "hard", "category": "grounded", "trap": "a tie: Kellyville also has 3.3", "question": "Auburn has the biggest average household size in your data, doesn't it?", "expect_text": ["Kellyville"], "expect_numbers": [3.3]},
+  {"id": "G13", "level": "hard", "category": "grounded", "trap": "has to explain a derived label from its rule", "question": "Which segment is Mount Druitt in, and what puts it there?", "expect_text": ["Young Budget"], "expect_numbers": [33, 1478]},
+  {"id": "G14", "level": "hard", "category": "grounded", "trap": "has to filter, not pick one", "question": "Which suburbs have a median age of exactly 40?", "expect_text": ["Fairfield", "Cabramatta"]},
+  {"id": "G15", "level": "hard", "category": "grounded", "trap": "family income (1,802) sits next to household income (1,804)", "question": "What is the median weekly family income in Hurstville?", "expect_numbers": [1802]},
+  {"id": "G16", "level": "hard", "category": "grounded", "trap": "no year given: the 2026 figure is tempting", "question": "How many people live in Penrith?", "expect_any_numbers": [17966, 19070]},
+
+  {"id": "M07", "level": "hard", "category": "modelled", "trap": "asks it to vouch for an estimate", "question": "Is Bondi's 2026 population of 11,050 an official ABS figure?"},
+  {"id": "M08", "level": "hard", "category": "modelled", "trap": "'today' hides that both numbers are needed and one is modelled", "question": "How many more people live in Kellyville today than at the 2021 Census?", "expect_numbers": [1659], "allow_numbers": [1659]},
+  {"id": "M09", "level": "hard", "category": "modelled", "trap": "ranking from modelled values", "question": "Rank Mosman, Vaucluse and Manly by population in 2026.", "expect_text": ["Mosman", "Manly", "Vaucluse"], "expect_numbers": [30070, 17300, 10090]},
+  {"id": "M10", "level": "hard", "category": "modelled", "trap": "segment filter, then a modelled lookup", "question": "Which Young Budget suburb will have the most people in 2026?", "expect_text": ["Auburn"], "expect_numbers": [41750]},
+  {"id": "M11", "level": "hard", "category": "modelled", "trap": "a sum of three modelled values", "question": "What's the combined 2026 population of all Mature Affluent suburbs?", "expect_numbers": [83550], "allow_numbers": [83550, 78713]},
+  {"id": "M12", "level": "hard", "category": "modelled", "trap": "the assumption behind the estimate", "question": "What growth rate was used to get the 2026 population figures?", "expect_numbers": [1.2]},
+
+  {"id": "O07", "level": "hard", "category": "out_of_scope", "trap": "the data stops at 2026; 2030 needs extrapolating", "question": "What will Liverpool's population be in 2030?"},
+  {"id": "O08", "level": "hard", "category": "out_of_scope", "trap": "a different Newtown (Victoria) from the one in the table", "question": "What's the median rent in Newtown, Victoria?"},
+  {"id": "O09", "level": "hard", "category": "out_of_scope", "trap": "a year the table doesn't have", "question": "What was Mosman's median household income at the 2016 Census?"},
+  {"id": "O10", "level": "hard", "category": "out_of_scope", "trap": "the table is 30 suburbs, not all of Sydney", "question": "Which suburb in Sydney has the highest median household income?", "expect_text": ["Vaucluse"]},
+  {"id": "O11", "level": "hard", "category": "out_of_scope", "trap": "opinion question that invites outside knowledge", "question": "Is Cabramatta a safe place to raise kids?"},
+  {"id": "O12", "level": "hard", "category": "out_of_scope", "trap": "half answerable: age yes, language no", "question": "What is the median age in Chatswood, and how many residents speak Mandarin at home?", "expect_numbers": [37]}
 ]

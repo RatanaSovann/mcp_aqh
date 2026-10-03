@@ -15,6 +15,7 @@ or set EVAL_RESULTS_DIR (e.g. a shared project folder).
 
 Run:    python eval/run_eval.py                      # Haiku 4.5, plain prompt
         python eval/run_eval.py --prompt guarded     # with grounding rules
+        python eval/run_eval.py --repeats 5          # each question 5 times
         python eval/run_eval.py --model claude-sonnet-5-5
         python eval/run_eval.py --backend sdk        # API key route
 """
@@ -32,7 +33,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "eval"))
-from score import build_scorecard, score_answer  # noqa: E402
+from score import build_scorecard, load_scored, tally, write_marking_sheet  # noqa: E402
 
 PROMPTS = {
     # What a typical connector user gets: no special instructions.
@@ -44,6 +45,20 @@ PROMPTS = {
         "source='modelled', say clearly that it is a modelled estimate, not a "
         "Census count. If the tool does not have the data, say so plainly and "
         "do not guess or use outside knowledge."
+    ),
+    # v2: guarded, plus fixes for the gaps the hard questions found in it
+    # (ranked lists out of order, unrequested extra figures).
+    "guarded_v2": (
+        "You are a helpful assistant with access to a Sydney suburb data tool. "
+        "Answer only with facts returned by the tool. If a value has "
+        "source='modelled', say clearly that it is a modelled estimate, not a "
+        "Census count. If the tool does not have the data, say so plainly and "
+        "do not guess or use outside knowledge. "
+        "When you rank or compare suburbs, first write down each value from the "
+        "tool, sort them by number, and check the order before answering: every "
+        "item must be larger (or smaller) than the next. Answer what was asked "
+        "and add no other figures; don't add extra lists, totals or estimates "
+        "nobody asked for."
     ),
 }
 MAX_TURNS = 8
@@ -85,7 +100,8 @@ def ask_cli(model, system, question, workdir) -> tuple[str, list]:
     env["CLAUDE_CODE_DISABLE_AUTO_MEMORY"] = "1"
     proc = subprocess.run(
         cmd, cwd=workdir, env=env, stdin=subprocess.DEVNULL,
-        capture_output=True, text=True, timeout=300,
+        # Claude prints UTF-8; say so, or Windows decodes it as cp1252 and crashes.
+        capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=300,
     )
 
     calls, answer = [], None
@@ -187,23 +203,27 @@ def git_version() -> str:
         return "?"
 
 
-def add_history_row(out_dir: Path, run_dir: Path, records: list[dict], when: str, version: str) -> None:
-    scored = [score_answer(r["id"], r["answer"]) for r in records]
+def add_history_row(out_dir: Path, run_dir: Path, when: str, version: str) -> None:
+    scored = load_scored(run_dir / "run.jsonl")
+    counts = tally(scored)
+    n_runs = len({s["repeat"] for s in scored})
 
-    def tally(cat=None):
-        rows = [s for s in scored if cat is None or s["category"] == cat]
-        return f"{sum(s['passed'] for s in rows)}/{len(rows)}"
+    def cell(cat):
+        avg, lo, hi, total = counts[cat]
+        avg = f"{avg:g}" if avg == int(avg) else f"{avg:.1f}"
+        return f"{avg}/{total}" + (f" ({lo}-{hi})" if n_runs > 1 else "")
 
     history = out_dir / "history.md"
     if not history.exists():
-        history.write_text("\n".join(HISTORY_HEADER) + "\n")
-    r = records[0]
+        history.write_text("\n".join(HISTORY_HEADER) + "\n", encoding="utf-8")
+    r = scored[0]
+    overall = f"**{cell('overall')}**" + (f" avg of {n_runs} runs" if n_runs > 1 else "")
     row = [
         when, r["model"], r["prompt"], version,
-        tally("grounded"), tally("modelled"), tally("out_of_scope"), f"**{tally()}**",
+        cell("grounded"), cell("modelled"), cell("out_of_scope"), overall,
         f"[{run_dir.name}]({run_dir.name}/scorecard.md)",
     ]
-    with history.open("a") as f:
+    with history.open("a", encoding="utf-8") as f:
         f.write("| " + " | ".join(row) + " |\n")
 
 
@@ -212,6 +232,7 @@ def main() -> None:
     parser.add_argument("--model", default="claude-haiku-4-5-20251001")
     parser.add_argument("--prompt", choices=PROMPTS, default="plain")
     parser.add_argument("--backend", choices=["cli", "sdk"], default="cli")
+    parser.add_argument("--repeats", type=int, default=1, help="ask each question this many times")
     parser.add_argument(
         "--out-dir", type=Path,
         default=Path(os.environ.get("EVAL_RESULTS_DIR", ROOT / "results")),
@@ -220,32 +241,36 @@ def main() -> None:
     started = datetime.now(timezone.utc)
     version = git_version()
 
-    questions = json.loads((ROOT / "eval" / "questions.json").read_text())
+    questions = json.loads((ROOT / "eval" / "questions.json").read_text(encoding="utf-8"))
+    # Every question asked --repeats times, since answers vary from run to run.
+    jobs = [(k, q) for k in range(1, args.repeats + 1) for q in questions]
     system = PROMPTS[args.prompt]
     if args.backend == "cli":
-        answers = run_cli(questions, args.model, system)
+        answers = run_cli([q for _, q in jobs], args.model, system)
     else:
-        answers = asyncio.run(run_sdk(questions, args.model, system))
+        answers = asyncio.run(run_sdk([q for _, q in jobs], args.model, system))
 
-    run_dir = args.out_dir / f"{started:%Y-%m-%d_%H%M}_{args.model}_{args.prompt}"
+    suffix = f"_x{args.repeats}" if args.repeats > 1 else ""
+    run_dir = args.out_dir / f"{started:%Y-%m-%d_%H%M}_{args.model}_{args.prompt}{suffix}"
     run_dir.mkdir(parents=True, exist_ok=True)
     run_path = run_dir / "run.jsonl"
     records = [
         {
-            "id": q["id"], "model": args.model, "prompt": args.prompt,
+            "id": q["id"], "repeat": k, "model": args.model, "prompt": args.prompt,
             "backend": args.backend, "code_version": version,
             "answer": answer, "tool_calls": calls,
         }
-        for q, (answer, calls) in zip(questions, answers)
+        for (k, q), (answer, calls) in zip(jobs, answers)
     ]
-    with run_path.open("w") as f:
+    with run_path.open("w", encoding="utf-8") as f:
         for record in records:
             f.write(json.dumps(record) + "\n")
-            print(f"{record['id']}: {record['answer'][:80]!r}")
+            print(f"{record['id']} #{record['repeat']}: {record['answer'][:80]!a}")
 
     card = build_scorecard(run_path)
-    (run_dir / "scorecard.md").write_text(card + "\n")
-    add_history_row(args.out_dir, run_dir, records, f"{started:%Y-%m-%d %H:%M}", version)
+    (run_dir / "scorecard.md").write_text(card + "\n", encoding="utf-8")
+    write_marking_sheet(run_path, run_dir / "marking_sheet.csv")
+    add_history_row(args.out_dir, run_dir, f"{started:%Y-%m-%d %H:%M}", version)
     print("\n" + card)
     print(f"\nSaved to {run_dir}; history in {args.out_dir / 'history.md'}")
 
