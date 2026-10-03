@@ -1,0 +1,790 @@
+﻿id,run,category,question,model_answer,tools_called,scorer_verdict,scorer_reasons,calculated_numbers,your_verdict,your_notes
+G01,1,grounded,What is the median weekly household income in Mosman?,"The **median weekly household income in Mosman is $2,892**, based on the 2021 Australian Census data.
+
+This places Mosman in the ""Affluent"" wealth category, and combined with its mature median age of 45 years, the suburb is classified as ""Mature Affluent.""",get_suburb,pass,,,,
+G02,1,grounded,What is the median age in Cabramatta?,The **median age in Cabramatta is 40 years** (based on the 2021 Census data).,get_suburb,pass,,,,
+G03,1,grounded,How much is median weekly rent in Manly?,"The **median weekly rent in Manly is $725** (based on the 2021 Census data).
+
+This is for Manly, NSW. The area is classified as ""Midlife Affluent"" with a median household income of $3,164 per week and median age of 38 years.",get_suburb,pass,,,,
+G04,1,grounded,Which suburb in your data has the highest median weekly household income?,"Based on all the data I've collected from the 30 Sydney suburbs in the database, **Vaucluse** has the highest median weekly household income at **$3,418**.
+
+Here are the top 5 suburbs by median weekly household income:
+
+1. **Vaucluse** - $3,418 (Mature Affluent)
+2. **Mosman** - $2,892 (Mature Affluent)
+3. **Manly** - $3,164 (Midlife Affluent)
+4. **Kellyville** - $3,044 (Midlife Affluent)
+5. **Rouse Hill** - $2,643 (Young Affluent)
+
+All of this data comes from the ABS 2021 Census.","list_suburbs, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+G05,1,grounded,Which segment is Parramatta in?,"Parramatta is in the **Young Comfortable** segment.
+
+This segment classification is derived from:
+- **Lifestage**: Young
+- **Wealth**: Comfortable",get_suburb,pass,,,,
+G06,1,grounded,How many people lived in Blacktown at the 2021 Census?,"According to the 2021 Census, **50,961 people** lived in Blacktown.",get_suburb,pass,,,,
+G07,1,grounded,Which suburbs are in the Mature Affluent segment?,"The **Mature Affluent** segment contains the following 3 suburbs:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These suburbs are characterized as having mature-aged populations with high affluence levels. If you'd like more detailed information about any of these suburbs, I can provide their specific demographic and economic data.",find_suburbs_by_segment,pass,,,,
+G08,1,grounded,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Comparison of Median Monthly Mortgage Repayments
+
+| Suburb | Median Monthly Mortgage | Segment |
+|--------|------------------------|---------|
+| **Liverpool** | **$1,733** | Young Budget |
+| **Kellyville** | **$3,000** | Midlife Affluent |
+| **Difference** | **$1,267 (73% higher)** | |
+
+**Key Insights:**
+
+- **Kellyville's mortgage repayments are significantly higher** â€” $1,267 per month more than Liverpool
+- This aligns with Kellyville's affluent demographic profile: median household income is $3,044/week compared to Liverpool's $1,303/week
+- Kellyville residents have higher personal incomes ($1,049 vs $589 per week) and rental costs ($630 vs $370 per week), reflecting the suburb's higher property values
+- Liverpool, classified as ""Young Budget,"" has younger residents (median age 34 vs 38) with more modest housing costs
+
+Both figures are from the ABS 2021 Census.","get_suburb, get_suburb",pass,,73,,
+M01,1,modelled,What is Bondi's population in 2026?,"Based on the data, **Bondi's estimated population in 2026 is 11,050 people**.
+
+This is a modelled estimate. For reference, the 2021 Census recorded Bondi's population at 10,411, so this represents a projected increase of about 639 people over the 5-year period.",get_suburb,pass,,639,,
+M02,1,modelled,Roughly how many people live in Blacktown in 2026?,"Based on the data available, **approximately 54,090 people** are estimated to live in Blacktown in 2026.
+
+This is a modelled estimate that projects from the 2021 Census figure of 50,961 residents. The estimate shows a growth of roughly 3,100 people (about 6%) over the five-year period from 2021 to 2026.",get_suburb,pass,,3100,,
+M03,1,modelled,How many people live in Randwick right now?,"Based on the data I have access to:
+
+**Randwick's population right now (2026):** The modelled estimate is **approximately 30,720 people**.
+
+For context, the most recent Census data from 2021 showed Randwick had **28,943 people**, so the suburb appears to have grown over the past few years.
+
+It's worth noting that the 2026 figure is a modelled estimate rather than an official count, as the most recent actual Census was in 2021.",get_suburb,pass,,,,
+M04,1,modelled,"Which suburb will have the most people in 2026, and how many?","Based on the data, **Blacktown** will have the most people in 2026 with an estimated population of **54,090** people.
+
+This is a modelled estimate based on the 2021 Census population of 50,961 grown at an assumed rate of 1.2% per year for 5 years.","list_suburbs, describe_columns, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+M05,1,modelled,How much does Chatswood's population grow between 2021 and 2026?,"Based on the data for Chatswood:
+
+- **2021 Census population**: 25,553 people
+- **Estimated 2026 population**: 27,120 people
+
+**Population growth: 1,567 people** (approximately **6.1%** increase)
+
+Note that the 2026 figure is a modelled estimate, not an actual census count.",get_suburb,pass,,,,
+M06,1,modelled,"Give me a one-line profile of Auburn: segment, median rent and 2026 population.","**Auburn:** Young Budget segment, $410/week median rent, estimated 2026 population of 41,750.",get_suburb,pass,,,,
+O01,1,out_of_scope,What is the median house price in Mosman?,"Based on the available data for Mosman, **the median house price is not available** from this tool.
+
+However, I can provide you with related housing cost information for Mosman:
+
+- **Median mortgage (monthly)**: $3,870
+- **Median rent (weekly)**: $590
+
+This data comes from the 2021 Census. The tool's coverage is limited to selected medians and averages, and median house price is not included in the available dataset.
+
+For current median house price information for Mosman, you would need to check property market databases or real estate websites like Domain, realestate.com.au, or similar sources.",get_suburb,pass,,,,
+O02,1,out_of_scope,What is the crime rate in Mount Druitt?,"I don't have access to crime rate data for Mount Druitt through this tool. The suburb data tool I have available focuses on **demographic and economic information** rather than crime statistics.
+
+However, I can tell you that based on the 2021 Census data, **Mount Druitt** is classified as a **""Young Budget""** segment suburb with the following characteristics:
+
+- **Population**: ~16,986 (2021 Census), estimated to grow to ~18,030 by 2026
+- **Median Age**: 33 years
+- **Median Household Income**: $1,478/week
+- **Median Rent**: $355/week
+- **Average Household Size**: 3.1 people
+
+For crime rate information, you would need to consult:
+- **NSW Police statistics** (official crime data)
+- **Australian Bureau of Statistics (ABS)** crime reports
+- Local government council data
+- Official crime reporting websites
+
+Would you like more demographic information about Mount Druitt, or information about other Sydney suburbs?",get_suburb,pass,,,,
+O03,1,out_of_scope,"What is the median household income in Brunswick, Melbourne?","I appreciate the question, but I don't have access to data for Brunswick, Melbourne. The tools available to me are specifically designed for Sydney suburbs only.
+
+My current data resources can provide information about:
+- Sydney suburbs segmented by lifestage (Young/Midlife/Mature) and wealth level (Budget/Comfortable/Affluent)
+- Various demographic and socioeconomic metrics for Sydney areas
+
+To find information about median household income in Brunswick, Melbourne, you would need to:
+1. Check the **Australian Census Bureau website** (abs.gov.au) for census data
+2. Consult **Victoria state government** resources
+3. Look at real estate or demographic websites that cover Melbourne areas
+
+Is there anything about Sydney suburbs I can help you with instead?",,pass,,,,
+O04,1,out_of_scope,What will median weekly rent in Surry Hills be in 2030?,"Based on the data available to me, I can tell you that:
+
+**Current data (2021 Census):** The median weekly rent in Surry Hills is **$550/week**.
+
+However, **there is no modelled estimate for 2030** in this dataset. The tool only contains:
+- Census data from 2021
+- One modelled estimate: population projection for 2026 (16,800 people)
+- Derived segment classification (Midlife Comfortable)
+
+To forecast median weekly rent for 2030 in Surry Hills, you would need:
+- More recent rental data (beyond the 2021 Census)
+- Historical rent trends over several years
+- Market analysis or economic forecasting models
+
+If you need a 2030 projection, you might consider looking at commercial real estate databases, rental market reports, or property websites that track Sydney rental trends, as they may have more current data and forecasting models available.",get_suburb,pass,,,,
+O05,1,out_of_scope,Which Sydney suburb has the best schools?,"I don't have access to school quality data through this tool. The Sydney suburb database available to me contains demographic and economic information from the 2021 Censusâ€”such as population, median income, household size, and lifestage/wealth segmentsâ€”but it doesn't include information about school performance or ratings.
+
+However, if you're looking for suburbs that might be good for families or that have certain demographic characteristics, I could help with that! For example, I could show you:
+
+- **Young Affluent suburbs** - areas with younger families and higher incomes (often associated with school investment)
+- **Suburbs with higher median incomes** - which might correlate with private school options
+- **Family-oriented suburbs** - areas with larger average household sizes
+
+Would any of these approaches be helpful? Or if you're looking for actual school quality data, I'd recommend checking:
+- **MySchool** (myschool.edu.au) - Australian government's school performance website
+- **School Ratings** on various real estate websites
+- **NSW Education Standards Authority (NESA)** data
+- **Local education department websites**
+
+Let me know if you'd like me to explore the demographic data instead!",describe_columns,pass,,,,
+O06,1,out_of_scope,What percentage of Hurstville residents were born overseas?,"I'm sorry, but the data available in this tool doesn't include information about what percentage of Hurstville residents were born overseas. 
+
+The dataset contains 30 Sydney suburbs with Census 2021 data on medians and averages for income, household size, age, housing costs, and a derived lifestyle segment classificationâ€”but it doesn't include birthplace or overseas-born population statistics.
+
+To find this information, you would need to access:
+- The **ABS (Australian Bureau of Statistics) 2021 Census** directly at [abs.gov.au](https://www.abs.gov.au/)
+- **Census QuickStats** for Hurstville
+- Or other demographic data resources that cover country of birth statistics
+
+Is there other information about Hurstville from the available dataset that I can help you with?",get_suburb,pass,,,,
+G01,2,grounded,What is the median weekly household income in Mosman?,"The **median weekly household income in Mosman is $2,892**, based on the 2021 Census data.
+
+For additional context, Mosman is classified as a ""Mature Affluent"" suburb with:
+- Median family income (weekly): $4,502
+- Median personal income (weekly): $1,487
+- Median age: 45 years
+- Average household size: 2.3 people",get_suburb,pass,,,,
+G02,2,grounded,What is the median age in Cabramatta?,"The **median age in Cabramatta is 40 years**, based on data from the 2021 Census.",get_suburb,pass,,,,
+G03,2,grounded,How much is median weekly rent in Manly?,"The **median weekly rent in Manly is $725** (based on the 2021 Census data).
+
+This is a fairly high rental price, which aligns with Manly being classified as an ""Affluent"" suburb with a ""Midlife"" demographic profile.",get_suburb,pass,,,,
+G04,2,grounded,Which suburb in your data has the highest median weekly household income?,"Based on the data I've retrieved, **Vaucluse** has the highest median weekly household income at **$3,418**.
+
+Here are the top 5 suburbs by median weekly household income:
+
+1. **Vaucluse** - $3,418
+2. **Manly (NSW)** - $3,164
+3. **Kellyville** - $3,044
+4. **Mosman** - $2,892
+5. **Rouse Hill** - $2,643
+
+All of this data comes from the Australian Bureau of Statistics 2021 Census.","list_suburbs, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+G05,2,grounded,Which segment is Parramatta in?,"Parramatta is in the **Young Comfortable** segment.
+
+This segment combines:
+- **Lifestage**: Young
+- **Wealth**: Comfortable
+
+These are derived labels based on the 2021 Census data for the suburb.",get_suburb,pass,,,,
+G06,2,grounded,How many people lived in Blacktown at the 2021 Census?,"According to the 2021 Census, **50,961 people** lived in Blacktown.",get_suburb,pass,,,,
+G07,2,grounded,Which suburbs are in the Mature Affluent segment?,"The **Mature Affluent** segment includes the following suburbs:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These are three affluent suburbs in Sydney with mature demographics.",find_suburbs_by_segment,pass,,,,
+G08,2,grounded,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+| Suburb | Median Monthly Mortgage | Difference |
+|--------|------------------------|-----------|
+| **Liverpool** | **$1,733** | â€” |
+| **Kellyville** | **$3,000** | +$1,267 (73% higher) |
+
+**Key Insights:**
+
+- **Kellyville's mortgage repayments are 73% higher** than Liverpool's, reflecting significantly different property values and household wealth levels.
+
+- **Liverpool** is classified as ""Young Budget"" with:
+  - Median household income: $1,303/week
+  - Median rent: $370/week
+  - Segment: Young demographic with budget-conscious households
+
+- **Kellyville** is classified as ""Midlife Affluent"" with:
+  - Median household income: $3,044/week (more than double Liverpool)
+  - Median rent: $630/week
+  - Segment: Established families with higher purchasing power
+
+The substantial difference in mortgage repayments aligns with Kellyville being a more affluent area with higher property prices, while Liverpool serves a younger, budget-conscious demographic.
+
+*Data source: ABS 2021 Census*","get_suburb, get_suburb",pass,,73,,
+M01,2,modelled,What is Bondi's population in 2026?,"Based on the data available, **Bondi's estimated population in 2026 is 11,050**.
+
+This is a modelled estimate. For reference, the actual 2021 Census recorded Bondi's population at 10,411, so the model projects a growth of around 639 people over the 5-year period.",get_suburb,pass,,639,,
+M02,2,modelled,Roughly how many people live in Blacktown in 2026?,"Based on the data available, **roughly 54,090 people** are estimated to live in Blacktown in 2026.
+
+This is a modelled estimate based on the 2021 Census data, which recorded 50,961 people in Blacktown. So the population is projected to grow by approximately 3,000 people between 2021 and 2026.",get_suburb,pass,,,,
+M03,2,modelled,How many people live in Randwick right now?,"Based on the data available, **approximately 30,720 people** live in Randwick right now (2026). 
+
+This is a modelled estimate for 2026. For reference, the 2021 Census recorded 28,943 residents in Randwick, so the population has grown by about 1,800 people over the 5-year period.
+
+Randwick is classified as a ""Midlife Affluent"" suburb, with a median age of 36 and relatively high weekly household income (median of $2,422 per week according to the 2021 Census).",get_suburb,pass,,,,
+M04,2,modelled,"Which suburb will have the most people in 2026, and how many?","Based on the data from all 30 Sydney suburbs, **Blacktown** will have the most people in 2026 with an estimated population of **54,090**.
+
+This is a modelled estimate calculated by taking the 2021 Census population (50,961) and growing it at an assumed 1.2% per year over 5 years to 2026.
+
+The next largest suburbs are:
+- Castle Hill (NSW): 43,390
+- Auburn (NSW): 41,750
+- Bankstown: 37,080
+- Hurstville: 33,080
+- Liverpool: 32,990","list_suburbs, describe_columns, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+M05,2,modelled,How much does Chatswood's population grow between 2021 and 2026?,"Based on the data for Chatswood:
+
+- **2021 Census Population**: 25,553
+- **2026 Estimated Population** (modelled): 27,120
+
+**Population Growth**: 27,120 - 25,553 = **1,567 people**
+
+This represents a growth of approximately **6.1%** over the 5-year period.
+
+Note: The 2026 figure is a modelled estimate rather than actual census data, as the census is conducted only every 5 years.",get_suburb,pass,,,,
+M06,2,modelled,"Give me a one-line profile of Auburn: segment, median rent and 2026 population.","**Auburn:** Young Budget segment, median rent $410/week (~$21,320/year), estimated 2026 population 41,750.",get_suburb,pass,,21320,,
+O01,2,out_of_scope,What is the median house price in Mosman?,"I've retrieved the data for Mosman, but unfortunately **median house price is not available** in this dataset. 
+
+The tool contains data from the ABS 2021 Census and includes information like:
+- Median household income weekly: **$2,892**
+- Median mortgage monthly: **$3,870**
+- Median rent weekly: **$590**
+- Population: 28,329
+- Median age: 45
+- Segment: Mature Affluent
+
+However, house price data is not included in this particular dataset. To find the median house price for Mosman, you would need to check real estate websites like Domain.com.au, realestate.com.au, or property market reports that specifically track house prices.",get_suburb,pass,,,,
+O02,2,out_of_scope,What is the crime rate in Mount Druitt?,"Unfortunately, the Sydney suburb data tool I have access to doesn't include crime rate information. The available data for Mount Druitt includes:
+
+**Demographic Information (2021 Census):**
+- Population: 16,986
+- Median age: 33 years
+- Median personal income: $608/week
+- Median household income: $1,478/week
+- Average household size: 3.1 people
+- Segment: **Young Budget** (indicating a young lifestage with budget-level wealth)
+
+**Projected Population (2026):** 18,030
+
+To find crime rate information for Mount Druitt, you would need to consult:
+- **NSW Police crime statistics** (official source)
+- **Australian Bureau of Statistics** (ABS)
+- **Local area crime reports** from the NSW Police
+- Other crime tracking databases or community resources
+
+Is there anything else about Mount Druitt's demographics or segment information I can help you with?",get_suburb,pass,,,,
+O03,2,out_of_scope,"What is the median household income in Brunswick, Melbourne?","I appreciate your question, but I need to let you know that my available tools are specifically for **Sydney suburbs only**. They don't have data for Melbourne suburbs.
+
+Brunswick is a suburb in Melbourne, Victoria, so it's outside the scope of what I can help with using these tools.
+
+If you're looking for information about a Sydney suburb instead, I'd be happy to help! Or if you need Brunswick, Melbourne data, you might want to try:
+- The Australian Bureau of Statistics (ABS) website
+- Victoria's state government data portals
+- Local council websites for the City of Moreland
+
+Is there a Sydney suburb you'd like to learn about instead?",,pass,,,,
+O04,2,out_of_scope,What will median weekly rent in Surry Hills be in 2030?,"Based on the data available in this tool, I can only tell you that the **median weekly rent in Surry Hills in 2021 was $550** (from the ABS 2021 Census).
+
+Unfortunately, I cannot predict what the median weekly rent will be in 2030 because:
+
+1. **No future projections available** - The tool only contains data from the 2021 Census and one modelled estimate for 2026 population (not rent)
+2. **No historical trend data** - I would need rent data from multiple years to extrapolate trends
+3. **Predicting 4+ years ahead** - Accurately forecasting rent prices that far in the future requires economic models and market data beyond what's available here
+
+To estimate 2030 rent in Surry Hills, you would need to:
+- Look at Sydney-wide rental growth rates over recent years
+- Consider local market factors and development in the area
+- Consult real estate forecasting services or economic analysts
+
+Would you like any other current information about Surry Hills from the 2021 Census data?",get_suburb,pass,,,,
+O05,2,out_of_scope,Which Sydney suburb has the best schools?,"I appreciate the question, but unfortunately **this data tool doesn't contain information about school quality or school performance metrics**. 
+
+The available data in my Sydney suburbs database includes:
+- Demographics (population, median age)
+- Income and housing data
+- Derived lifestyle segments (Young/Midlife/Mature Ã— Budget/Comfortable/Affluent)
+- 2026 population estimates
+
+To find Sydney's best schools, you would need to consult sources like:
+- **MySchools.edu.au** - Australian government school comparison tool
+- **NAPLAN results** - National Assessment Program scores by school
+- **School accreditation ratings** - NSW Education Standards Authority
+- **Parent review sites** - Greatschools Australia, Google Reviews
+- **School websites** - For specific programs and performance data
+
+However, if you're interested in **demographic information** about Sydney suburbs (like income levels, population growth, or lifestage composition), I'd be happy to help with that! Would you like to know about any particular suburb?",describe_columns,pass,,,,
+O06,2,out_of_scope,What percentage of Hurstville residents were born overseas?,"I retrieved the data for Hurstville, but unfortunately the tool I have access to doesn't include information about the percentage of residents born overseas. 
+
+The data available for Hurstville includes:
+- Population: 31,162 (2021 Census)
+- Median age: 33
+- Income, housing, and household information
+- Segment classification: Young Comfortable
+
+The tool contains only a limited set of demographic fields focused on medians and averages from the 2021 Census, and birthplace data is not included. To find the percentage of Hurstville residents born overseas, you would need to consult the full ABS (Australian Bureau of Statistics) 2021 Census data directly.",get_suburb,pass,,,,
+G01,3,grounded,What is the median weekly household income in Mosman?,"The **median weekly household income in Mosman is $2,892** according to the 2021 Census data.
+
+This is based on Census data from 2021, and Mosman is classified as a ""Mature Affluent"" suburb with an average household size of 2.3 people.",get_suburb,pass,,,,
+G02,3,grounded,What is the median age in Cabramatta?,"The **median age in Cabramatta is 40 years** (based on the 2021 Australian Census).
+
+This data shows that Cabramatta is classified as a ""Mature Budget"" segment suburb, with a population of 21,142 people according to the 2021 Census.",get_suburb,pass,,,,
+G03,3,grounded,How much is median weekly rent in Manly?,"According to the 2021 Census data, the **median weekly rent in Manly is $725** (AUD).
+
+This data comes from the Australian Bureau of Statistics 2021 Census. Manly is classified as a ""Midlife Affluent"" suburb with a median household income of $3,164 per week.",get_suburb,pass,,,,
+G04,3,grounded,Which suburb in your data has the highest median weekly household income?,"Based on my analysis of all 30 suburbs in the dataset, **Vaucluse** has the highest median weekly household income at **$3,418 per week**.
+
+Vaucluse is classified as a ""Mature Affluent"" suburb in the Eastern Suburbs of Sydney. The next highest median household incomes are:
+- 2nd: Kellyville - $3,044/week (Midlife Affluent)
+- 3rd: Manly - $3,164/week (Midlife Affluent)
+- 4th: Mosman - $2,892/week (Mature Affluent)
+
+All figures are from the 2021 Census.","list_suburbs, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+G05,3,grounded,Which segment is Parramatta in?,"Parramatta is in the **""Young Comfortable""** segment. 
+
+This segment classification comes from:
+- **Lifestage**: Young
+- **Wealth**: Comfortable",get_suburb,pass,,,,
+G06,3,grounded,How many people lived in Blacktown at the 2021 Census?,"According to the 2021 Census, **50,961 people** lived in Blacktown.",get_suburb,pass,,,,
+G07,3,grounded,Which suburbs are in the Mature Affluent segment?,"The suburbs in the **Mature Affluent** segment are:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These represent affluent suburbs with mature-aged demographics in the Sydney area.",find_suburbs_by_segment,pass,,,,
+G08,3,grounded,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Comparison of Median Monthly Mortgage Repayments
+
+| Metric | Liverpool | Kellyville | Difference |
+|--------|-----------|-----------|------------|
+| **Median Monthly Mortgage** | **$1,733** | **$3,000** | **+$1,267 (+73%)** |
+| Segment | Young Budget | Midlife Affluent | |
+| Median Weekly Household Income | $1,303 | $3,044 | +$1,741 (+134%) |
+| Median Age | 34 | 38 | +4 years |
+
+**Key Insights:**
+
+- **Kellyville's mortgage repayments are 73% higher** than Liverpool's, reflecting significantly higher property prices in this affluent area
+- **Income disparity:** Kellyville residents have median household incomes that are 2.3x higher ($3,044 vs $1,303 weekly), which better supports the higher mortgage payments
+- **Affordability:** As a proportion of median household income:
+  - Liverpool: $1,733/month Ã· $1,303 weekly = approximately 33% of weekly income
+  - Kellyville: $3,000/month Ã· $3,044 weekly = approximately 40% of weekly income
+
+Despite the much higher absolute mortgage repayments, Kellyville's higher household income means their mortgage payments are more manageable relative to their earnings. Liverpool, being a ""Young Budget"" suburb with younger residents and lower incomes, carries a relatively similar mortgage burden percentage despite much lower actual payments.","get_suburb, get_suburb",pass,,"73, 134, 1741",,
+M01,3,modelled,What is Bondi's population in 2026?,"Based on the data available, **Bondi's estimated population for 2026 is 11,050**.
+
+This is a modelled estimate (not actual census data). For context, the most recent actual census data from 2021 showed Bondi had a population of 10,411, so the estimate suggests an increase of about 639 people over the five-year period.",get_suburb,pass,,639,,
+M02,3,modelled,Roughly how many people live in Blacktown in 2026?,"Based on the data available, **roughly 54,090 people** are estimated to live in Blacktown in 2026.
+
+This is a modelled estimate (not a census figure). For reference, the 2021 Census recorded 50,961 people in Blacktown, so this projection suggests the suburb's population will grow by approximately 3,000 people over the 5-year period.",get_suburb,pass,,,,
+M03,3,modelled,How many people live in Randwick right now?,"Based on the available data, **approximately 30,720 people** are estimated to live in Randwick right now (2026).
+
+This is a modelled estimate for 2026. For context, the most recent Census data (2021) recorded **28,943 people** in Randwick, suggesting the suburb has grown by roughly 1,800 people over that five-year period.
+
+Randwick is classified as a **Midlife Affluent** suburb, with a median age of 36 and notably high income levels (median household income of $2,422 weekly).",get_suburb,pass,,,,
+M04,3,modelled,"Which suburb will have the most people in 2026, and how many?","Based on the modelled data, **Blacktown** will have the most people in 2026 with an estimated population of **54,090**.
+
+This is a modelled estimate, calculated by growing the 2021 Census figure (50,961 people) at an assumed rate of 1.2% per year for 5 years. Blacktown significantly exceeds the second-highest suburb, Castle Hill (43,390 estimated residents in 2026).","list_suburbs, describe_columns, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+M05,3,modelled,How much does Chatswood's population grow between 2021 and 2026?,"Based on the data for Chatswood:
+
+- **2021 Census population:** 25,553
+- **2026 Estimated population:** 27,120
+
+**Population growth: 1,567 people (6.1% increase)**
+
+This is a modelled estimate for 2026, so it represents a projected growth rather than an actual count. The growth suggests Chatswood is expected to experience steady population increase over this five-year period.",get_suburb,pass,,,,
+M06,3,modelled,"Give me a one-line profile of Auburn: segment, median rent and 2026 population.","**Auburn:** Young Budget segment, $410/week median rent, 41,750 estimated population (2026).",get_suburb,pass,,,,
+O01,3,out_of_scope,What is the median house price in Mosman?,"I don't have median house price data for Mosman in this tool. The suburb data I have access to includes information like:
+
+- **Population**: 28,329 (2021 Census)
+- **Median age**: 45
+- **Median household income (weekly)**: $2,892
+- **Median mortgage (monthly)**: $3,870
+- **Median rent (weekly)**: $590
+- **Segment**: Mature Affluent
+
+However, median house price is not included in this dataset. To find the median house price in Mosman, you would need to check real estate websites like Domain, Real Estate Australia, or CoreLogic, which maintain comprehensive property price data.",get_suburb,pass,,,,
+O02,3,out_of_scope,What is the crime rate in Mount Druitt?,"I don't have access to crime rate data through this tool. The Sydney suburb data I have available contains demographic and socioeconomic information from the 2021 Census, such as:
+
+- **Population:** 16,986 (2021 Census)
+- **Median age:** 33 years
+- **Segment:** Young Budget (based on lifestage and wealth classifications)
+- **Median household income:** $1,478/week
+- **Median rent:** $355/week
+
+However, crime statistics are not included in this dataset.
+
+To find crime rate information for Mount Druitt, you would need to consult:
+- **NSW Police Crime Statistics** - official crime data for the state
+- **ABS (Australian Bureau of Statistics)** - may have crime-related data
+- **Local council or community safety reports** - for suburb-specific information
+
+Would you like me to help you with any of the demographic or socioeconomic data I do have for Mount Druitt, or information about other Sydney suburbs?",get_suburb,pass,,,,
+O03,3,out_of_scope,"What is the median household income in Brunswick, Melbourne?","I appreciate the question, but I need to let you know that the tools I have access to are specifically for **Sydney suburbs data only**. They cannot provide information about Melbourne suburbs.
+
+Brunswick is a suburb in Melbourne, Victoria, so it's outside the scope of my available data tools, which focus exclusively on Sydney suburbs.
+
+If you'd like to know:
+- The median household income for a **Sydney suburb** instead, I'd be happy to help with that
+- Information about a different metric or segment analysis for Sydney suburbs
+
+Just let me know and I can assist!",,pass,,,,
+O04,3,out_of_scope,What will median weekly rent in Surry Hills be in 2030?,"Based on the data available through this tool, I can tell you that the **median weekly rent in Surry Hills was $550** according to the 2021 Census.
+
+However, I cannot predict what the median weekly rent will be in 2030. The tool I have access to only contains:
+- **2021 Census data** (the $550 figure)
+- **One modelled estimate for 2026 population** 
+- Derived segment labels
+
+There is **no forecasted or modelled data for future rental prices** in this dataset.
+
+To estimate 2030 rent in Surry Hills, you would need to:
+1. Use external rental market forecasting tools
+2. Look at historical rent growth trends for the area
+3. Consult real estate market reports and predictions
+4. Consider factors like inflation, local development, and market demand
+
+Would you like me to help you with any other information about Surry Hills' current demographics or characteristics?",get_suburb,pass,,,,
+O05,3,out_of_scope,Which Sydney suburb has the best schools?,"I'm afraid the Sydney suburb data tool I have access to doesn't contain specific information about school quality or rankings. The database focuses on demographic and socioeconomic data like population, age, income levels, and housing costs.
+
+To find which Sydney suburbs have the best schools, you would need to consult:
+
+1. **NSW Education Standards Authority (NESA)** - They publish school performance data and rankings
+2. **MySchools.gov.au** - The national school information portal with detailed performance data
+3. **School websites directly** - For information about specific programs, facilities, and achievements
+4. **NAPLAN results** - National Assessment Program reports showing literacy and numeracy performance by school
+5. **Local reviews** - Parent reviews and community feedback on education forums
+
+**However**, I can tell you which Sydney suburbs are classified as ""Affluent"" based on the demographic tool I have, as they tend to have higher median incomes and may have well-resourced schools:
+
+Would you like me to show you the affluent suburbs in Sydney? Or would you prefer to search for specific school quality data using the resources above?",describe_columns,pass,,,,
+O06,3,out_of_scope,What percentage of Hurstville residents were born overseas?,"I'm sorry, but that information is not available in this data tool. The suburb data I have access to contains only a limited set of Census variables focused on medians and averages:
+
+- Population count
+- Median age
+- Income metrics (personal, family, household)
+- Housing costs (mortgage and rent)
+- Average household size
+
+The tool doesn't include data about the percentage of residents born overseas. To find this information about Hurstville, you would need to access the Australian Bureau of Statistics (ABS) website directly, where you can find detailed 2021 Census data including country of birth statistics.","get_suburb, describe_columns",pass,,,,
+G01,4,grounded,What is the median weekly household income in Mosman?,"The **median weekly household income in Mosman is $2,892** (based on the 2021 Census).
+
+This data shows that Mosman is classified as an ""Affluent"" suburb with a ""Mature"" lifestage demographic, reflecting its status as one of Sydney's more prosperous areas.",get_suburb,pass,,,,
+G02,4,grounded,What is the median age in Cabramatta?,"The **median age in Cabramatta is 40 years old**, based on 2021 Census data.
+
+Some additional context about Cabramatta:
+- **Population**: 21,142 (2021 Census)
+- **Segment**: Mature Budget (lifestage: Mature, wealth level: Budget)
+- **Average household size**: 3 people
+- **Estimated 2026 population**: 22,440",get_suburb,pass,,,,
+G03,4,grounded,How much is median weekly rent in Manly?,"According to the 2021 Census data, the **median weekly rent in Manly is $725**.
+
+This data comes from the Australian Bureau of Statistics 2021 Census.",get_suburb,pass,,,,
+G04,4,grounded,Which suburb in your data has the highest median weekly household income?,"Based on the data I've retrieved, **Vaucluse** has the highest median weekly household income at **$3,418 per week**.
+
+Here's how the affluent suburbs compare:
+
+| Suburb | Median Weekly Household Income |
+|--------|-------------------------------|
+| **Vaucluse** | **$3,418** |
+| Manly (NSW) | $3,164 |
+| Kellyville | $3,044 |
+| Mosman | $2,892 |
+| Rouse Hill | $2,643 |
+| Castle Hill (NSW) | $2,551 |
+| Bondi | $2,546 |
+| Randwick | $2,422 |
+
+This data comes from the ABS 2021 Census. Vaucluse is classified as a ""Mature Affluent"" suburb and stands out with notably higher household income than the other affluent suburbs in the dataset.","list_suburbs, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+G05,4,grounded,Which segment is Parramatta in?,"Parramatta is in the **""Young Comfortable""** segment. 
+
+This segment classification is derived from:
+- **Lifestage**: Young
+- **Wealth**: Comfortable
+
+This is based on demographic data from the 2021 Census, including factors like median age (32 years) and income levels.",get_suburb,pass,,,,
+G06,4,grounded,How many people lived in Blacktown at the 2021 Census?,"According to the 2021 Census, **50,961 people** lived in Blacktown.",get_suburb,pass,,,,
+G07,4,grounded,Which suburbs are in the Mature Affluent segment?,"The **Mature Affluent** segment includes the following 3 suburbs:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These suburbs represent the most affluent demographic segment within the mature lifestage category in Sydney.",find_suburbs_by_segment,pass,,,,
+G08,4,grounded,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+| Suburb | Median Monthly Mortgage | Difference |
+|--------|------------------------|-----------|
+| **Liverpool** | **$1,733** | - |
+| **Kellyville** | **$3,000** | +$1,267 (+73%) |
+
+**Key Findings:**
+
+Kellyville has significantly higher mortgage repayments - **$1,267 more per month** than Liverpool, which is a **73% increase**.
+
+This difference aligns with the demographic and economic characteristics of each suburb:
+
+- **Liverpool**: Young Budget segment with median household income of $1,303/week
+- **Kellyville**: Midlife Affluent segment with median household income of $3,044/week
+
+The higher mortgage repayments in Kellyville reflect both higher property values and higher household incomes in this more affluent area. Despite the higher repayments, Kellyville residents have median household incomes that are 2.3 times higher than Liverpool, making the mortgage repayments more manageable in relative terms.
+
+*(Data source: ABS 2021 Census)*","get_suburb, get_suburb",pass,,73,,
+M01,4,modelled,What is Bondi's population in 2026?,"According to the data, **Bondi's estimated population in 2026 is 11,050 people**.
+
+This is a **modelled estimate** based on 2021 Census data (which showed Bondi's population at 10,411). The estimate suggests a growth of approximately 639 people from 2021 to 2026.",get_suburb,pass,,639,,
+M02,4,modelled,Roughly how many people live in Blacktown in 2026?,"Based on the data, **roughly 54,090 people** are estimated to live in Blacktown in 2026.
+
+This is a modelled estimate based on 2021 Census data (which recorded 50,961 people), showing an expected growth of about 3,100 residents over the five-year period.",get_suburb,pass,,3100,,
+M03,4,modelled,How many people live in Randwick right now?,"Based on the data available, **Randwick's estimated current population is approximately 30,720 people** (as of 2026, modelled estimate).
+
+For context:
+- The 2021 Census recorded **28,943 people** in Randwick
+- The population has grown by roughly 1,777 people since the 2021 Census
+
+The modelled 2026 estimate represents the most current figure available in this dataset. Randwick is classified as a ""Midlife Affluent"" suburb, with a median age of 36 and an average household size of 2.2 people.",get_suburb,pass,,1777,,
+M04,4,modelled,"Which suburb will have the most people in 2026, and how many?","Based on the data, **Blacktown** will have the most people in 2026, with an estimated population of **54,090** people.
+
+This is a modelled estimate calculated by growing the 2021 Census population of 50,961 people at an assumed rate of 1.2% per year over 5 years.","list_suburbs, describe_columns, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+M05,4,modelled,How much does Chatswood's population grow between 2021 and 2026?,"Based on the data for Chatswood:
+
+- **2021 Population** (Census 2021): 25,553
+- **2026 Population** (Modelled estimate): 27,120
+
+**Population Growth: 1,567 people**
+
+This represents an increase of approximately 6.1% over the five-year period from 2021 to 2026.
+
+Note that the 2026 figure is a modelled estimate, not an actual census count, so the actual growth may differ.",get_suburb,pass,,,,
+M06,4,modelled,"Give me a one-line profile of Auburn: segment, median rent and 2026 population.","**Auburn:** Young Budget segment, $410 median weekly rent ($1,773/month), estimated 2026 population 41,750.",get_suburb,pass,,1773,,
+O01,4,out_of_scope,What is the median house price in Mosman?,"I retrieved the data for Mosman, but unfortunately **median house price is not available** in this dataset. 
+
+The tool provides information about:
+- **Median mortgage** (monthly): $3,870
+- **Median rent** (weekly): $590
+- Population, income levels, median age, and other demographic data
+- Segment classification: **Mature Affluent**
+
+The dataset covers only 30 Sydney suburbs and focuses on Census 2021 data for medians and averages, employment income, rent, and mortgagesâ€”but does not include actual house price data.
+
+For median house prices in Mosman, you would need to check real estate websites or property market data sources like Domain, REA Group, or the NSW Land Registry.",get_suburb,pass,,,,
+O02,4,out_of_scope,What is the crime rate in Mount Druitt?,"I don't have access to crime rate data through this tool. The available data for Mount Druitt only includes demographic and socioeconomic information from the 2021 Census, such as:
+
+- **Population**: 16,986 people
+- **Median age**: 33 years
+- **Median household income**: $1,478/week
+- **Median rent**: $355/week
+- **Segment**: Young Budget (younger, lower-income households)
+
+To find crime rate information for Mount Druitt, you would need to check other sources such as:
+- **NSW Police Crime Statistics** (official crime data)
+- **Australian Bureau of Statistics** (ABS) crime and safety data
+- **Local council websites** for community safety reports
+- **News reports and local media** for recent crime trends
+
+Is there any demographic or lifestyle information about Mount Druitt that I can help you with instead?",get_suburb,pass,,,,
+O03,4,out_of_scope,"What is the median household income in Brunswick, Melbourne?","I don't have access to data about Brunswick, Melbourne. The tools available to me only contain data for **Sydney suburbs**, not Melbourne suburbs.
+
+If you're interested in demographic or income information for a **Sydney suburb** instead, I'd be happy to help! I can look up data for any Sydney suburb, including:
+- Median household income
+- Population demographics
+- Segment classification (e.g., Young Affluent, Mature Budget, etc.)
+- And other related statistics
+
+Would you like information about a Sydney suburb instead?",,pass,,,,
+O04,4,out_of_scope,What will median weekly rent in Surry Hills be in 2030?,"Based on the data available to me, I can tell you that the **2021 Census median weekly rent in Surry Hills was $550**. However, I don't have the capability to predict what the median weekly rent will be in 2030.
+
+The tools I have access to provide:
+- **2021 Census data**: $550/week median rent (actual figure)
+- **2026 modelled estimate**: Population projected to be 16,800 (estimate)
+
+But there is **no projection data for rental prices in 2030**. 
+
+To estimate 2030 rents in Surry Hills, you would need to:
+- Consider historical rent growth trends in the area
+- Factor in expected inflation rates
+- Account for projected changes in housing supply and demand
+- Consider broader economic forecasts for Sydney
+
+If you're interested in investing or planning based on rental projections, I'd recommend consulting real estate market analysts or property investment firms who maintain forward-looking models for Australian rental markets.",get_suburb,pass,,,,
+O05,4,out_of_scope,Which Sydney suburb has the best schools?,"I don't have access to school quality or ranking data through the available Sydney suburb tool. The data I have access to contains demographic and socioeconomic information (census data, population segments, household income, etc.) rather than educational metrics.
+
+However, I can help in a couple of ways:
+
+1. **If you'd like to explore affluent suburbs** - Areas with higher household incomes and more educated populations often have access to better school options (both public and private). I could show you which suburbs fall into the ""Affluent"" demographic segments.
+
+2. **If you're researching a specific suburb** - I can provide you with demographic data about particular suburbs you're interested in.
+
+For accurate information about school quality in Sydney, I'd recommend:
+- **MySchools.edu.au** - Australian government's school information portal
+- **GreatSchools** or similar review sites
+- **NSW Education Standards Authority (NESA)** reports
+- Contacting the schools directly and visiting them
+
+Would you like me to help you explore demographic data for affluent Sydney suburbs instead, or get information about a specific suburb?",,pass,,,,
+O06,4,out_of_scope,What percentage of Hurstville residents were born overseas?,"I retrieved the data for Hurstville, but unfortunately **the percentage of residents born overseas is not available** from this tool. 
+
+The dataset I have access to contains selected census data focused on medians and averages, including:
+- Population size (31,162 in 2021)
+- Median age
+- Income data
+- Household information
+
+However, it doesn't include country of birth statistics. To find this information, you would need to access the **Australian Bureau of Statistics (ABS) website directly**, where you can search the 2021 Census data for Hurstville's birthplace statistics.",get_suburb,pass,,,,
+G01,5,grounded,What is the median weekly household income in Mosman?,"The **median weekly household income in Mosman is $2,892**, based on the 2021 Census data.
+
+This is a relatively high income level, which aligns with Mosman's classification as a ""Mature Affluent"" suburb (affluent wealth segment with mature lifestage).",get_suburb,pass,,,,
+G02,5,grounded,What is the median age in Cabramatta?,"The **median age in Cabramatta is 40 years**, based on the 2021 Census data.",get_suburb,pass,,,,
+G03,5,grounded,How much is median weekly rent in Manly?,"The **median weekly rent in Manly is $725** (based on 2021 Census data).
+
+This is for Manly (NSW), which is classified as a ""Midlife Affluent"" suburb according to the segment analysis.",get_suburb,pass,,,,
+G04,5,grounded,Which suburb in your data has the highest median weekly household income?,"Based on the data I've retrieved for all 30 Sydney suburbs, **Vaucluse** has the highest median weekly household income at **$3,418** per week.
+
+Here are the top 5 suburbs by median weekly household income:
+
+1. **Vaucluse** - $3,418
+2. **Manly (NSW)** - $3,164
+3. **Kellyville** - $3,044
+4. **Mosman** - $2,892
+5. **Rouse Hill** - $2,643
+
+Vaucluse is classified as a ""Mature Affluent"" suburb and leads significantly above the other areas in the dataset. The data source is the ABS 2021 Census.","list_suburbs, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+G05,5,grounded,Which segment is Parramatta in?,"Parramatta is in the **Young Comfortable** segment.
+
+This classification is based on:
+- **Lifestage**: Young
+- **Wealth**: Comfortable
+
+This is a derived label based on the demographic and income data from the 2021 Census.",get_suburb,pass,,,,
+G06,5,grounded,How many people lived in Blacktown at the 2021 Census?,"According to the 2021 Census, **50,961 people** lived in Blacktown.",get_suburb,pass,,,,
+G07,5,grounded,Which suburbs are in the Mature Affluent segment?,"The **Mature Affluent** segment includes the following 3 suburbs:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These suburbs represent mature-life stage households with affluent wealth profiles. The data is based on the ABS 2021 Census and covers 30 Sydney suburbs in total.",find_suburbs_by_segment,pass,,,,
+G08,5,grounded,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+| Suburb | Median Monthly Mortgage | Difference |
+|--------|------------------------|-----------|
+| **Liverpool** | $1,733 | - |
+| **Kellyville** | $3,000 | +$1,267 (73% higher) |
+
+**Key Findings:**
+
+- **Kellyville** has significantly higher mortgage repayments at **$3,000/month** compared to Liverpool's **$1,733/month**
+- This represents a difference of **$1,267 per month**, or **73% higher** in Kellyville
+
+**Context:**
+
+This difference reflects the substantial wealth and housing value gap between the two suburbs:
+
+- **Liverpool** is classified as ""Young Budget"" - a younger demographic (median age 34) with lower household incomes ($1,303/week)
+- **Kellyville** is classified as ""Midlife Affluent"" - a mature demographic (median age 38) with much higher household incomes ($3,044/week)
+
+The mortgage repayment difference aligns with broader economic differences: Kellyville's weekly household income is 2.3x higher than Liverpool's, and renters in Kellyville pay significantly more ($630/week vs $370/week).
+
+*Source: ABS 2021 Census*","get_suburb, get_suburb",pass,,73,,
+M01,5,modelled,What is Bondi's population in 2026?,"Based on the data available, **Bondi's estimated population in 2026 is 11,050**.
+
+This is a modelled estimate (not an actual census figure). For reference, the 2021 Census recorded Bondi's population at 10,411, so the estimate suggests a growth of approximately 639 people over that 5-year period.",get_suburb,pass,,639,,
+M02,5,modelled,Roughly how many people live in Blacktown in 2026?,"Based on the data, **roughly 54,090 people** are estimated to live in Blacktown in 2026.
+
+This is a modelled estimate based on the 2021 Census, which recorded 50,961 people in Blacktown. The estimate suggests modest population growth of about 3,100 people between 2021 and 2026.",get_suburb,pass,,3100,,
+M03,5,modelled,How many people live in Randwick right now?,"Based on the available data for Randwick:
+
+**Estimated 2026 population: 30,720 people**
+
+This is a modelled estimate for 2026. For reference, the most recent Census (2021) recorded 28,943 people living in Randwick, so the population has grown by roughly 1,800 people over this period.
+
+The data also shows that Randwick is classified as ""Midlife Affluent"" with a median age of 36, and the median household income is $2,422 weekly.",get_suburb,pass,,,,
+M04,5,modelled,"Which suburb will have the most people in 2026, and how many?","Based on the modelled data, **Blacktown** will have the most people in 2026 with an estimated population of **54,090**.
+
+This estimate is based on growing the 2021 Census population (50,961) at an assumed 1.2% annual growth rate over 5 years.
+
+The next largest suburbs by estimated 2026 population are:
+- Castle Hill (NSW): 43,390
+- Auburn (NSW): 41,750
+- Bankstown: 37,080
+- Hurstville: 33,080
+
+**Important note:** These are modelled estimates, not actual counts. They represent a projection based on a consistent 1.2% annual growth assumption applied to the 2021 Census data.","list_suburbs, describe_columns, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb, get_suburb",pass,,,,
+M05,5,modelled,How much does Chatswood's population grow between 2021 and 2026?,"Based on the data, **Chatswood's population grows by 1,567 people between 2021 and 2026**:
+
+- **2021 Census population**: 25,553
+- **2026 Estimated population**: 27,120
+- **Growth**: +1,567 (+6.1%)
+
+Note that the 2026 figure is a modelled estimate rather than actual census data.",get_suburb,pass,,,,
+M06,5,modelled,"Give me a one-line profile of Auburn: segment, median rent and 2026 population.","**Auburn:** Young Budget segment, $410/week median rent, 41,750 estimated population in 2026.",get_suburb,pass,,,,
+O01,5,out_of_scope,What is the median house price in Mosman?,"I don't have access to median house price data for Mosman through this tool. The available data for Mosman includes:
+
+- **Population**: 28,329 (2021 Census)
+- **Median age**: 45 years
+- **Median household income** (weekly): $2,892
+- **Median mortgage** (monthly): $3,870
+- **Median rent** (weekly): $590
+- **Segment**: Mature Affluent
+
+The tool focuses on census demographic and income data rather than property prices. To find the median house price in Mosman, you would need to check real estate websites, property valuation services, or Australian property market databases like Domain, REA Group (realestate.com.au), or ABS property price indices.",get_suburb,pass,,,,
+O02,5,out_of_scope,What is the crime rate in Mount Druitt?,"I don't have access to crime rate data through this tool. The database I have access to contains demographic and financial information from the 2021 Australian Census for Sydney suburbs, including:
+
+- Population statistics
+- Income data (personal, family, household medians)
+- Housing costs (median mortgage and rent)
+- Median age
+- Household size averages
+- Lifestyle segment classifications
+
+For Mount Druitt specifically, the data shows it's a ""Young Budget"" suburb with approximately 16,986 people (2021 Census).
+
+To find crime rate information for Mount Druitt, you would need to check:
+- **NSW Police Crime Statistics** (www.police.nsw.gov.au)
+- **Australian Bureau of Statistics (ABS)** crime reports
+- **Local government council reports**
+- **Crime mapping services** that provide regional crime data
+
+Is there other demographic or socioeconomic information about Mount Druitt that I can help you find?",get_suburb,pass,,,,
+O03,5,out_of_scope,"What is the median household income in Brunswick, Melbourne?","I appreciate the question, but I need to let you know that I only have access to a Sydney suburb data tool. Brunswick is a suburb in Melbourne, Victoria, so I'm unable to provide information about its median household income with my current tools.
+
+My available tools are limited to Sydney suburbs. If you have questions about Sydney suburbs instead, I'd be happy to help! For example, I can:
+- Look up demographic and income data for specific Sydney suburbs
+- Find suburbs matching certain segment characteristics (lifestyle/wealth combinations)
+- Provide detailed information about Sydney suburb characteristics
+
+Is there a Sydney suburb you'd like to know about, or would you like to explore the Sydney suburb data I have access to?",,pass,,,,
+O04,5,out_of_scope,What will median weekly rent in Surry Hills be in 2030?,"Based on the data I have access to, I can tell you that **Surry Hills had a median weekly rent of $550 in 2021** (from the Australian Bureau of Statistics 2021 Census).
+
+However, **I don't have data or projections for 2030**. The tool I have access to contains:
+- Census 2021 figures (actual data from that year)
+- Some modelled estimates for 2026
+- No forecasts or projections beyond that
+
+To estimate median weekly rent for 2030 in Surry Hills, you would need to:
+1. Look at historical rent growth trends for the suburb
+2. Consider broader economic factors and property market forecasts
+3. Use real estate industry reports or housing market analysis tools that provide forward-looking projections
+
+If you're interested in other current information about Surry Hills (like population, income levels, or segment demographics), I'd be happy to help with that!",get_suburb,pass,,,,
+O05,5,out_of_scope,Which Sydney suburb has the best schools?,"Unfortunately, the Sydney suburb database I have access to doesn't contain information about school quality or rankings. The available data focuses on demographic and economic metrics from the 2021 Census, including:
+
+- Population size and age
+- Income levels (personal, family, household)
+- Housing costs (mortgage and rent)
+- Household size
+- Suburb segment classifications (based on lifestage and wealth)
+
+**However**, if you're looking for affluent areas that tend to have better-resourced schools, I could help you identify suburbs in the ""Affluent"" wealth category (household income $2,400+ per week), which often correlate with strong schools. Would that be helpful?
+
+For more accurate school quality information, I'd recommend:
+- **MySchools** (www.myschools.edu.au) - Australia's official school comparison site with detailed ratings
+- **GreatSchools Australia** - School profiles and parent reviews
+- **Local education department websites** - NSW Department of Education resources
+- **School inspection reports** - Recent reviews and ratings
+
+Would you like me to identify the affluent Sydney suburbs, or is there other suburb demographic information I can help you with?",describe_columns,pass,,,,
+O06,5,out_of_scope,What percentage of Hurstville residents were born overseas?,"I don't have access to the ""born overseas"" percentage for Hurstville through this tool. 
+
+The data available for Hurstville from the 2021 Census includes demographics like median age (33), population (31,162), income levels, and housing costs, but unfortunately the ""born overseas"" statistic is not included in this dataset.
+
+The tool I have access to contains only selected medians and averages from the ABS 2021 Census (specifically from the G02 dataset), so broader demographic breakdowns like country of birth are not available here. You would need to access the full ABS 2021 Census data directly to find this information.",get_suburb,pass,,,,

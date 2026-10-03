@@ -1,0 +1,116 @@
+﻿priority,id,run,question,model_answer,why_judged,rules,rules_reasons,judge,judge_reason,your_verdict,your_notes
+1 disagree,G08,2,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"Based on the 2021 Census data:
+
+- **Liverpool**: $1,733 per month
+- **Kellyville**: $3,000 per month
+
+Kellyville has a significantly higher median monthly mortgage repayment—$1,267 more than Liverpool. This reflects Kellyville's higher property values and affluent demographic profile (Midlife Affluent segment) compared to Liverpool's Young Budget segment.",risky: explanation,pass,,fail,"The figures ($1,733 and $3,000) and the $1,267 difference are correct, and the segments are right, but the claim that the gap 'reflects Kellyville's higher property values' is an outside-knowledge explanation the table does not support (it has no property value data).",,
+1 disagree,G08,5,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"Based on Census 2021 data:
+
+- **Liverpool**: $1,733 median monthly mortgage repayment
+- **Kellyville**: $3,000 median monthly mortgage repayment
+
+Kellyville has a much higher median monthly mortgage repayment—$1,267 more per month than Liverpool. This reflects Kellyville's higher property values, as it is classified as ""Midlife Affluent"" compared to Liverpool's ""Young Budget"" segment.",risky: explanation,pass,,fail,"The figures are correct ($1,733, $3,000, difference $1,267), but the claim that this 'reflects Kellyville's higher property values' is not in the table. The segment labels are based on household income, not property values, so the claim is an unsupported inference presented as fact.",,
+1 disagree,G12,3,"Auburn has the biggest average household size in your data, doesn't it?","No, Auburn does not have the biggest average household size. Auburn and Kellyville are tied with the largest average household size at 3.3 persons per household. 
+
+Here's the ranking of the top suburban averages in the data:
+- Auburn (NSW): 3.3
+- Kellyville: 3.3
+- Mount Druitt: 3.1
+- Cabramatta: 3.0
+- Castle Hill (NSW): 3.0
+- Rouse Hill: 3.0
+
+All figures are from the 2021 Census.",risky: list or ranking,pass,,fail,"The answer opens with 'No, Auburn does not have the biggest average household size', but Auburn does have the largest value (3.3), jointly with Kellyville, so the direct answer is wrong even though the tie and the figures below it are correct.",,
+1 disagree,G13,1,"Which segment is Mount Druitt in, and what puts it there?","Mount Druitt is in the **Young Budget** segment.
+
+This classification is derived from Census data:
+
+**What puts it in ""Young"":**
+- Median age of 33
+- Average household size of 3.1 (indicating younger families)
+
+**What puts it in ""Budget"":**
+- Median personal income: $608/week
+- Median household income: $1478/week
+- Median family income: $1625/week
+
+These income levels are relatively lower, placing the suburb in the Budget wealth category.",risky: list or ranking,pass,,fail,"The answer names Young Budget and its figures are correct, but it wrongly says household size (3.1) helps put Mount Druitt in 'Young' and lists personal and family income as drivers of 'Budget'. The actual rules are median age under 35 and household income under $1,600/wk. It never states these thresholds, so it doesn't explain the derived label from its rule.",,
+1 disagree,G13,4,"Which segment is Mount Druitt in, and what puts it there?","Mount Druitt is in the **Young Budget** segment.
+
+Here's what puts it there, based on Census 2021 figures:
+
+**Lifestage - Young:**
+- Median age: 33 years
+
+**Wealth - Budget:**
+- Median personal income (weekly): $608
+- Median family income (weekly): $1,625
+- Median household income (weekly): $1,478
+- Median rent (weekly): $355
+
+The combination of a relatively young median age and lower incomes across personal, family, and household levels classifies Mount Druitt as a Young Budget neighbourhood.",risky: list or ranking,pass,,fail,"The numbers and the Young Budget label are correct, but the answer never states the actual rules (median age under 35; household income under $1,600/wk). It wrongly implies that personal income, family income and rent drive the Budget label, when only household income does (and the $1,625 family income is above $1,600).",,
+1 disagree,G13,5,"Which segment is Mount Druitt in, and what puts it there?","Mount Druitt is in the **Young Budget** segment.
+
+This classification is derived from two characteristics:
+
+1. **Lifestage: Young** — The median age is 33 and the average household size is 3.1, indicating younger families or households.
+
+2. **Wealth: Budget** — The income levels are relatively low:
+   - Median personal income: $608 weekly
+   - Median family income: $1,625 weekly
+   - Median household income: $1,478 weekly
+   - Median rent: $355 weekly
+
+These Census 2021 figures place Mount Druitt in the budget wealth category.",risky: list or ranking,pass,,fail,"All the figures are correct, but the answer never states the derived rules (median age under 35 for Young, household income under $1,600/wk for Budget). It also wrongly presents household size, personal income, family income and rent as part of what puts Mount Druitt in the segment, when only median age and household income decide it.",,
+1 disagree,O03,4,"What is the median household income in Brunswick, Melbourne?","I don't have access to data for Melbourne suburbs. The tools available to me contain data only for Sydney suburbs. 
+
+To find the median household income for Brunswick, Melbourne, you would need to check other sources such as:
+- Australian Census data (census.gov.au)
+- Real estate websites like Domain or REA Group
+- Local government resources for the City of Yarra (which covers Brunswick)
+
+Is there a Sydney suburb you'd like information about instead?",risky: list or ranking,pass,,fail,"It correctly says the table has no Melbourne data, but then adds outside claims presented as fact: that City of Yarra covers Brunswick (it is in Merri-bek) and that census data is at 'census.gov.au' (the ABS is abs.gov.au).",,
+1 disagree,O08,1,"What's the median rent in Newtown, Victoria?","According to the 2021 Census data, the **median rent in Newtown (NSW)** is **$550 per week**.
+
+Note: This is Newtown in New South Wales (Sydney), not Victoria. My data covers Sydney suburbs only.",rules failed,fail,did not say the data doesn't cover this,pass,"The answer clearly says the table covers only Sydney's Newtown (NSW), not Victoria, and gives the correct figure ($550/week) as related data without silently swapping the place.",,
+1 disagree,O08,4,"What's the median rent in Newtown, Victoria?","Based on the 2021 Census data, the median weekly rent in Newtown (NSW) is **$550 per week**.
+
+Note: This is Census 2021 data, so it's now several years old. Also, I should mention that my data covers Sydney suburbs—there is no Newtown listed for Victoria in this tool.",rules failed,fail,did not say the data doesn't cover this,pass,"The answer states the table has no Newtown in Victoria (only Sydney suburbs), and the $550 weekly rent for Newtown (NSW) is correct and clearly labelled as the NSW suburb, so no silent swap occurs.",,
+1 disagree,O10,1,Which suburb in Sydney has the highest median household income?,"Based on the data from the 2021 Census, **Vaucluse** has the highest median household income among Sydney suburbs in this dataset, with a **median household income of $3,418 per week**.",rules failed,fail,did not say the data doesn't cover this,pass,"Vaucluse at $3,418/wk is the highest in the table, and the answer scopes the claim to 'in this dataset', so it does not present the result as covering all of Sydney.",,
+1 disagree,O10,2,Which suburb in Sydney has the highest median household income?,"Based on the 2021 Census data, **Vaucluse** has the highest median household income in Sydney among the 30 suburbs in this dataset, at **$3,418 per week**.",risky: refusal,pass,,fail,"Vaucluse at $3,418 is correct for the table, but the answer opens by calling it the highest 'in Sydney' and only hints at the 30-suburb limit. It never says plainly that the table can't establish this for all of Sydney.",,
+1 disagree,O10,4,Which suburb in Sydney has the highest median household income?,"Looking at the median household income data from all 30 Sydney suburbs:
+
+**Vaucluse** has the highest median household income at **$3,418 per week**.
+
+The next highest are:
+- Manly (NSW): $3,164 per week
+- Kellyville: $3,044 per week
+- Mosman: $2,892 per week
+
+All figures are from the 2021 Census.",risky: list or ranking,pass,,fail,"The figures and ranking are correct, but the answer never says the table covers only 30 suburbs rather than all of Sydney, so it presents Vaucluse as Sydney's highest without the required caveat.",,
+1 disagree,O10,5,Which suburb in Sydney has the highest median household income?,"Looking at the median household income data for all 30 suburbs in the dataset, here are the top 5:
+
+1. **Vaucluse: $3,418 per week** (highest)
+2. Manly (NSW): $3,164 per week
+3. Kellyville: $3,044 per week
+4. Mosman: $2,892 per week
+5. Rouse Hill: $2,643 per week
+
+**Vaucluse has the highest median household income at $3,418 per week** according to the 2021 Census data.",risky: list or ranking,pass,,fail,"The figures and top-5 order are correct, but the answer never says the table covers only 30 suburbs and cannot establish the highest in all of Sydney, and its bolded conclusion reads as an unqualified answer to the Sydney-wide question.",,
+1 disagree,O11,1,Is Cabramatta a safe place to raise kids?,"I don't have access to safety or crime data for Cabramatta through this tool. The data available to me only includes demographic information such as population, income, household size, and age distribution.
+
+To assess whether Cabramatta is safe for raising kids, you would need to consult resources that provide:
+- Crime statistics and safety records
+- School performance data
+- Local community and family services information
+- Neighbourhood reviews from residents
+
+I'd recommend checking official crime statistics from NSW Police, school performance ratings, and local government resources for Fairfield Council (which covers Cabramatta) for a proper assessment.",risky: list or ranking,pass,,fail,"It correctly says the table has no safety data, but it then states as fact that Fairfield Council covers Cabramatta, which is outside knowledge not in the table, and it wrongly says the table has 'age distribution' when it only has median age.",,
+2 both fail,O10,3,Which suburb in Sydney has the highest median household income?,"Based on the data from the 2021 Census, **Vaucluse** has the highest median household income among Sydney suburbs in this dataset, with a median household income of **$3,418 per week**.
+
+For comparison, here are the other affluent suburbs ranked by median household income:
+1. Vaucluse: $3,418/week
+2. Manly (NSW): $3,164/week
+3. Kellyville: $3,044/week
+4. Mosman: $2,892/week",rules failed,fail,did not say the data doesn't cover this,fail,"Vaucluse ($3,418) is correct and the answer says 'in this dataset', but it presents four suburbs as 'the other affluent suburbs' when four more Affluent suburbs (Rouse Hill, Castle Hill, Bondi, Randwick) are omitted, and it never plainly says the table covers only 30 suburbs and so can't settle the question for all of Sydney.",,
