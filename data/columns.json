@@ -1,0 +1,16 @@
+{
+  "sal_code": {"source": "census_2021", "description": "ABS Suburb and Locality (SAL) code, 2021 ASGS"},
+  "area_name": {"source": "census_2021", "description": "Suburb name as ABS writes it"},
+  "people": {"source": "census_2021", "description": "Count of people, Census night 2021"},
+  "median_age": {"source": "census_2021", "description": "Median age of persons (years)"},
+  "median_personal_income_weekly": {"source": "census_2021", "description": "Median total personal income ($ per week)"},
+  "median_family_income_weekly": {"source": "census_2021", "description": "Median total family income ($ per week)"},
+  "median_household_income_weekly": {"source": "census_2021", "description": "Median total household income ($ per week)"},
+  "median_mortgage_monthly": {"source": "census_2021", "description": "Median mortgage repayments ($ per month)"},
+  "median_rent_weekly": {"source": "census_2021", "description": "Median rent ($ per week)"},
+  "avg_household_size": {"source": "census_2021", "description": "Average number of people per household"},
+  "lifestage": {"source": "derived", "description": "Young (median age under 35), Midlife (35-39), Mature (40+)"},
+  "wealth": {"source": "derived", "description": "Budget (household income under $1,600/wk), Comfortable ($1,600-$2,399), Affluent ($2,400+)"},
+  "segment": {"source": "derived", "description": "Lifestage x wealth label, e.g. 'Young Affluent'"},
+  "est_population_2026": {"source": "modelled", "description": "MODELLED estimate, not a count: 2021 Census people grown at an assumed 1.2% per year for 5 years"}
+}

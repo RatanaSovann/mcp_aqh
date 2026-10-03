@@ -1,0 +1,31 @@
+sal_code,area_name,people,median_age,median_personal_income_weekly,median_family_income_weekly,median_household_income_weekly,median_mortgage_monthly,median_rent_weekly,avg_household_size,lifestage,wealth,segment,est_population_2026
+SAL12749,Mosman,28329,45,1487,4502,2892,3870,590,2.3,Mature,Affluent,Mature Affluent,30070
+SAL14089,Vaucluse,9510,43,1393,4560,3418,4200,700,2.7,Mature,Affluent,Mature Affluent,10090
+SAL10462,Bondi,10411,34,1386,3345,2546,3033,656,2.1,Young,Affluent,Young Affluent,11050
+SAL13714,Surry Hills,15828,35,1442,3551,2308,2839,550,1.8,Midlife,Comfortable,Midlife Comfortable,16800
+SAL12969,Newtown (NSW),14690,34,1309,3383,2330,3000,550,2.1,Young,Comfortable,Young Comfortable,15590
+SAL11645,Glebe (NSW),11680,38,1045,2947,1756,3000,420,2,Midlife,Comfortable,Midlife Comfortable,12400
+SAL13167,Parramatta,30211,32,1015,2314,2092,2080,440,2.4,Young,Comfortable,Young Comfortable,32070
+SAL10396,Blacktown,50961,34,757,1935,1774,2094,400,2.9,Young,Comfortable,Young Comfortable,54090
+SAL12370,Liverpool,31078,34,589,1475,1303,1733,370,2.6,Young,Budget,Young Budget,32990
+SAL11480,Fairfield (NSW),18596,40,454,1246,1092,1733,365,2.9,Mature,Budget,Mature Budget,19740
+SAL10738,Cabramatta,21142,40,461,1279,1184,1500,330,3,Mature,Budget,Mature Budget,22440
+SAL13195,Penrith,17966,36,812,1850,1397,1783,380,2.1,Midlife,Budget,Midlife Budget,19070
+SAL10779,Campbelltown (NSW),16577,34,739,1834,1432,2000,390,2.4,Young,Budget,Young Budget,17600
+SAL10846,Castle Hill (NSW),40874,42,931,2858,2551,3000,560,3,Mature,Affluent,Mature Affluent,43390
+SAL11943,Hornsby,22462,38,890,2284,1952,2240,440,2.5,Midlife,Comfortable,Midlife Comfortable,23840
+SAL10891,Chatswood,25553,37,938,2455,2158,2858,577,2.5,Midlife,Comfortable,Midlife Comfortable,27120
+SAL12485,Manly (NSW),16296,38,1595,4266,3164,3467,725,2.2,Midlife,Affluent,Midlife Affluent,17300
+SAL11120,Cronulla,17899,43,1179,2719,2058,2404,500,2.1,Mature,Comfortable,Mature Comfortable,19000
+SAL11971,Hurstville,31162,33,698,1802,1804,2167,470,2.8,Young,Comfortable,Young Comfortable,33080
+SAL10181,Bankstown,34933,34,542,1436,1331,1800,400,2.9,Young,Budget,Young Budget,37080
+SAL10107,Auburn (NSW),39333,31,580,1440,1533,2000,410,3.3,Young,Budget,Young Budget,41750
+SAL12514,Marrickville,26570,37,1077,2714,2170,2600,480,2.3,Midlife,Comfortable,Midlife Comfortable,28200
+SAL13325,Randwick,28943,36,1336,3255,2422,3000,572,2.2,Midlife,Affluent,Midlife Affluent,30720
+SAL12096,Kellyville,27011,38,1049,3122,3044,3000,630,3.3,Midlife,Affluent,Midlife Affluent,28670
+SAL12767,Mount Druitt,16986,33,608,1625,1478,1815,355,3.1,Young,Budget,Young Budget,18030
+SAL13444,Rouse Hill,11349,34,1089,2935,2643,2730,500,3,Young,Affluent,Young Affluent,12050
+SAL13690,Strathfield (NSW),25915,32,815,2423,2262,2765,480,2.8,Young,Comfortable,Young Comfortable,27510
+SAL11431,Epping (NSW),29551,36,946,2445,2243,2600,500,2.8,Midlife,Comfortable,Midlife Comfortable,31370
+SAL11229,Dee Why,23354,36,1065,2460,2106,2457,550,2.3,Midlife,Comfortable,Midlife Comfortable,24790
+SAL13658,St Marys (NSW),13256,34,754,1747,1437,1847,365,2.5,Young,Budget,Young Budget,14070

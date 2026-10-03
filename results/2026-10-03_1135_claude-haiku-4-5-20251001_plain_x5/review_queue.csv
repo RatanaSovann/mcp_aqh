@@ -1,0 +1,534 @@
+﻿priority,id,run,question,model_answer,why_judged,rules,rules_reasons,judge,judge_reason,your_verdict,your_notes
+1 disagree,G04,1,Which suburb in your data has the highest median weekly household income?,"Based on the data from all 30 Sydney suburbs, **Vaucluse** has the highest median weekly household income at **$3,418**.
+
+Vaucluse is classified as a ""Mature Affluent"" suburb in the data. The next highest are:
+- Kellyville: $3,044 (Midlife Affluent)
+- Manly: $3,164 (Midlife Affluent)
+- Mosman: $2,892 (Mature Affluent)
+
+This data comes from the 2021 Australian Bureau of Statistics Census.",risky: list or ranking,pass,,fail,"Vaucluse at $3,418 is correct, but the 'next highest' list is in the wrong order: Manly ($3,164) is higher than Kellyville ($3,044) yet is listed after it.",,
+1 disagree,G04,2,Which suburb in your data has the highest median weekly household income?,"Based on the data from all 30 Sydney suburbs, **Vaucluse** has the highest median weekly household income at **$3,418 per week**.
+
+Vaucluse is classified as a ""Mature Affluent"" suburb and is located on Sydney's eastern beaches. This is followed closely by:
+- Kellyville: $3,044 per week (Midlife Affluent)
+- Manly: $3,164 per week (Midlife Affluent)
+- Mosman: $2,892 per week (Mature Affluent)
+
+All of these top earners are in the ""Affluent"" wealth category, with Vaucluse standing out as the clear leader.",risky: list or ranking,pass,,fail,"The answer lists the runners-up in the wrong order (Kellyville $3,044 ahead of Manly $3,164), and it adds outside knowledge ('located on Sydney's eastern beaches') that isn't in the table.",,
+1 disagree,G04,3,Which suburb in your data has the highest median weekly household income?,"Based on my analysis of the affluent suburbs in the dataset, **Vaucluse** has the highest median weekly household income at **$3,418 per week** (from the 2021 Census).
+
+Here's how it compares to other affluent suburbs in Sydney:
+
+1. **Vaucluse**: $3,418/week (Mature Affluent)
+2. **Manly**: $3,164/week (Midlife Affluent)
+3. **Kellyville**: $3,044/week (Midlife Affluent)
+4. **Mosman**: $2,892/week (Mature Affluent)
+5. **Rouse Hill**: $2,643/week (Young Affluent)
+6. **Castle Hill**: $2,551/week (Mature Affluent)
+7. **Bondi**: $2,546/week (Young Affluent)
+
+Vaucluse, a Mature Affluent suburb on Sydney's Eastern suburbs with an average household size of 2.7 people, clearly leads with a median household income well above $2,400 per week.",risky: list or ranking,pass,,fail,"Vaucluse and $3,418 are correct, but the answer adds 'on Sydney's Eastern suburbs', which is outside knowledge not in the table. It also presents a list of affluent suburbs that leaves out Randwick (Affluent, $2,422).",,
+1 disagree,G07,5,Which suburbs are in the Mature Affluent segment?,"The suburbs in the **Mature Affluent** segment are:
+
+1. **Mosman**
+2. **Vaucluse**
+3. **Castle Hill (NSW)**
+
+These represent affluent areas with mature-stage households (typically older, established families or retirees).",risky: list or ranking,pass,,fail,"The list (Mosman, Vaucluse, Castle Hill) is correct, but the added claim that these are 'typically older, established families or retirees' is not in the table, which defines Mature only as median age 40+, so it is an unsupported outside characterisation.",,
+1 disagree,G08,1,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+Based on 2021 Census data, here's how the two suburbs compare:
+
+| Suburb | Median Monthly Mortgage | Difference from Liverpool |
+|--------|------------------------|--------------------------|
+| **Liverpool** | **$1,733** | — |
+| **Kellyville** | **$3,000** | +$1,267 (73% higher) |
+
+### Key Insights:
+
+**Kellyville** has significantly higher median mortgage repayments—**$1,267 more per month** than Liverpool. This reflects the substantial difference in their wealth profiles:
+
+- **Liverpool** is classified as a ""Young Budget"" suburb with:
+  - Median household income: $1,303/week
+  - Median age: 34 years
+  - Average household size: 2.6 people
+
+- **Kellyville** is classified as a ""Midlife Affluent"" suburb with:
+  - Median household income: $3,044/week (2.3x higher)
+  - Median age: 38 years
+  - Average household size: 3.3 people
+
+The higher mortgage repayments in Kellyville align with it being a more affluent, established area with larger family homes and mature residents, while Liverpool is a younger, more budget-conscious area.",risky: list or ranking,pass,,fail,"The figures are correct ($1,733 vs $3,000, a $1,267 difference, 73% higher, 2.3x income), but the closing paragraph adds unsupported claims. It says Kellyville has 'larger family homes' and 'mature residents', which the table doesn't show, and the second is also contradicted by Kellyville's Midlife label (median age 38).",,
+1 disagree,G08,4,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+| Suburb | Median Monthly Mortgage | Difference |
+|--------|------------------------|------------|
+| **Liverpool** | $1,733 | - |
+| **Kellyville** | $3,000 | +$1,267 |
+
+**Key Finding:** Kellyville residents pay **$1,267 more per month** (73% higher) in median mortgage repayments compared to Liverpool.
+
+### Context:
+This significant difference aligns with the demographic profiles of each suburb:
+
+- **Liverpool** (Young Budget): Lower income households with median household income of $1,303/week
+- **Kellyville** (Midlife Affluent): Higher income households with median household income of $3,044/week (more than double)
+
+Kellyville's higher mortgage repayments reflect both higher property prices in the area and the greater financial capacity of residents in that affluent suburb. The median age is also higher in Kellyville (38 vs 34), suggesting more established homeowners in their peak earning years.
+
+*Source: ABS 2021 Census*",risky: explanation,pass,,fail,"The figures are correct (1,733 vs 3,000, a difference of 1,267, 73% higher, household incomes, segments and ages), but the answer then states as fact that Kellyville has 'higher property prices' and 'established homeowners in their peak earning years'. Neither claim is in the table.",,
+1 disagree,G08,5,Compare median monthly mortgage repayments in Liverpool and Kellyville.,"## Median Monthly Mortgage Repayments Comparison
+
+| Suburb | Median Monthly Mortgage | Difference |
+|--------|------------------------|-----------|
+| **Liverpool** | $1,733 | — |
+| **Kellyville** | $3,000 | +$1,267 |
+
+**Key Insights:**
+
+- **Kellyville** has significantly higher median monthly mortgage repayments at **$3,000**, which is **73% higher** than Liverpool's $1,733
+- This reflects Kellyville's ""Midlife Affluent"" demographic versus Liverpool's ""Young Budget"" segment
+- Kellyville also has higher median household income ($3,044/week vs $1,303/week), which better supports the larger mortgage repayments
+- The higher mortgages in Kellyville correlate with its higher property values in a more affluent area
+
+Both figures are from the 2021 Australian Census (ABS G02 Selected Medians and Averages).",risky: list or ranking,pass,,fail,"The figures ($1,733, $3,000, +$1,267, 73%, incomes, segments) are all correct, but the answer also claims Kellyville has 'higher property values' and cites 'ABS G02 Selected Medians and Averages'. Neither is in the table, so both are outside facts presented as data.",,
+1 disagree,G09,1,Which suburb in your data has the lowest median weekly household income?,"Based on the data I've retrieved, **Fairfield (NSW)** has the lowest median weekly household income at **$1,092** per week.
+
+This is notably lower than all other suburbs in the dataset. The next lowest is Liverpool at $1,303 per week, followed by Bankstown at $1,331 per week.
+
+Fairfield is classified as a ""Mature Budget"" segment in the data, reflecting its lower income levels alongside being composed of more mature-aged residents.",risky: explanation,pass,,fail,"Fairfield at $1,092 is correct, but the answer says Liverpool ($1,303) is next lowest when Cabramatta ($1,184) is lower, so the ranking is wrong.",,
+1 disagree,G12,2,"Auburn has the biggest average household size in your data, doesn't it?","No, not quite! Auburn has an average household size of **3.3**, which is tied for the largest, but it's not alone. 
+
+**Auburn and Kellyville are tied for the biggest average household size at 3.3.**
+
+The next largest are:
+- Mount Druitt: 3.1
+- Rouse Hill, Castle Hill, and Cabramatta: 3.0 each
+
+So while Auburn does have the biggest average household size, it shares this distinction with Kellyville. Both suburbs are classified as having younger lifestages with higher household sizes compared to the rest of the 30 suburbs in the data.",risky: refusal,pass,,fail,"The tie (Auburn and Kellyville at 3.3) and the runners-up are correct, but the answer says both suburbs have 'younger lifestages', and Kellyville is Midlife (median age 38), not Young.",,
+1 disagree,G12,5,"Auburn has the biggest average household size in your data, doesn't it?","Actually, **Auburn is tied for the biggest average household size, but it doesn't have it exclusively**. 
+
+Here's what I found by looking at all 30 suburbs in the data:
+
+**Tied for largest:**
+- **Auburn: 3.3**
+- **Kellyville: 3.3**
+
+**Next largest:**
+- Mount Druitt: 3.1
+
+Auburn and Kellyville both have an average household size of 3.3, which is the highest in the dataset. So while Auburn is among the largest, it shares that distinction with Kellyville (a Midlife Affluent suburb in the northwest), while Auburn itself is classified as Young Budget.",risky: list or ranking,pass,,fail,"The tie at 3.3 (Auburn and Kellyville) and Mount Druitt at 3.1 are correct, but describing Kellyville as 'in the northwest' is outside knowledge that is not in the table.",,
+1 disagree,G13,2,"Which segment is Mount Druitt in, and what puts it there?","**Mount Druitt is in the ""Young Budget"" segment.**
+
+Here's what puts it there:
+
+**Lifestage - Young:**
+- Median age of 33, indicating a younger population
+- Average household size of 3.1, suggesting young families with children
+
+**Wealth - Budget:**
+- **Lower incomes:** Median personal income is $608/week, median household income is $1,478/week
+- **Modest housing costs:** Median rent is $355/week and median mortgage is $1,815/month
+- These income and cost levels indicate a budget-conscious demographic
+
+So Mount Druitt's classification reflects a younger population with families, but with more limited financial resources compared to ""Comfortable"" or ""Affluent"" segments. The combination of the relatively young median age paired with lower household incomes places it firmly in the Young Budget category.",risky: list or ranking,pass,,fail,"The numbers are correct (age 33, household income $1,478), but the answer never states the derivation rule (Young = median age under 35, Budget = household income under $1,600/wk). It wrongly implies household size, rent and mortgage help determine the segment, and it adds speculation about young families.",,
+1 disagree,G13,5,"Which segment is Mount Druitt in, and what puts it there?","**Mount Druitt is in the ""Young Budget"" segment.**
+
+Here's what puts it there:
+
+**Lifestage: Young**
+- Median age of 33 years, indicating a younger population
+
+**Wealth: Budget**
+- Median personal income (weekly): $608
+- Median family income (weekly): $1,625
+- Median household income (weekly): $1,478
+- Median rent (weekly): $355
+
+These income and rent figures are relatively lower, placing Mount Druitt in the ""Budget"" wealth category rather than Comfortable or Affluent. Combined with its younger demographic profile, Mount Druitt is classified as a **Young Budget** suburb—characterized by younger residents with more modest household incomes.",risky: list or ranking,pass,,fail,"The segment (Young Budget) and all figures are correct, but the answer never states the derived rule (median age under 35; household income under $1,600/wk). It also implies personal income, family income and rent help determine 'Budget', when only household income does.",,
+1 disagree,G14,3,Which suburbs have a median age of exactly 40?,"Based on the data from all 30 Sydney suburbs, **two suburbs have a median age of exactly 40**:
+
+1. **Fairfield (NSW)** - Median age: 40 (Mature Budget segment)
+2. **Cabramatta** - Median age: 40 (Mature Budget segment)
+
+Both suburbs are part of the ""Mature Budget"" demographic segment and are located in the western Sydney region.",risky: refusal,pass,,fail,"The two suburbs (Fairfield and Cabramatta) are correct, but the claim that both are 'located in the western Sydney region' is outside knowledge, since the table has no location or region data.",,
+1 disagree,G16,4,How many people live in Penrith?,"According to the 2021 Census, **17,966 people** lived in Penrith.
+
+The data also includes a modelled estimate that the population is projected to be around **19,070 in 2026**.
+
+Some additional demographic information about Penrith:
+- **Median age:** 36 years old
+- **Average household size:** 2.1 people
+- **Segment classification:** Midlife Budget (indicating families in their mid-working years with moderate incomes)",risky: list or ranking,pass,,fail,"The figures are correct (17,966 in the 2021 Census; 19,070 as a modelled 2026 estimate), but the gloss on Midlife Budget as 'families in their mid-working years with moderate incomes' is not in the table. The table defines Budget as household income under $1,600/wk, and the gloss presents an invented interpretation as fact.",,
+1 disagree,M08,4,How many more people live in Kellyville today than at the 2021 Census?,"Based on the data, **approximately 1,659 more people** live in Kellyville today than at the 2021 Census.
+
+Here's the breakdown:
+- **2021 Census population:** 27,011 people
+- **2026 estimated population:** 28,670 people
+- **Growth:** 1,659 people
+
+This represents about a 6.1% increase over the 5-year period since the last census.",risky: list or ranking,pass,,fail,"The arithmetic is correct (28,670 − 27,011 = 1,659, about 6.1%), but the answer only calls the 2026 figure 'estimated'. It never says it is a modelled figure built on an assumed 1.2% annual growth rate rather than a count, and it presents the 6.1% as real growth.",,
+1 disagree,M10,1,Which Young Budget suburb will have the most people in 2026?,"Based on the modelled data, **Auburn (NSW)** will have the most people among Young Budget suburbs in 2026, with an estimated population of **41,750**.
+
+Here's how all the Young Budget suburbs compare for 2026:
+
+1. **Auburn (NSW)**: 41,750
+2. **Bankstown**: 37,080
+3. **Liverpool**: 32,990
+4. **Mount Druitt**: 18,030
+5. **Campbelltown (NSW)**: 17,600
+6. **St Marys (NSW)**: 14,070
+
+Auburn already had the largest population in the 2021 Census (39,333) and is projected to continue growing at the strongest rate among these suburbs.",risky: list or ranking,pass,,fail,"The ranking and the figures (Auburn 41,750 first) are correct, but the claim that Auburn is growing 'at the strongest rate' is wrong, because the model applies the same 1.2% per year to every suburb.",,
+1 disagree,O03,2,"What is the median household income in Brunswick, Melbourne?","I don't have access to data about Melbourne suburbs. The tools I have available are specifically for Sydney suburbs segmentation and demographic data.
+
+Brunswick is a suburb in Melbourne, Victoria, so it's outside the scope of the data I can access. To find information about the median household income in Brunswick, Melbourne, you might want to try:
+
+1. **Australian Bureau of Statistics (ABS)** - census.abs.gov.au
+2. **Victoria State Government** - Victoria.gov.au
+3. **Local council resources** - Moreland City Council (which covers Brunswick)
+4. **Real estate websites** - Often provide demographic and income information
+
+If you have questions about **Sydney suburbs** instead, I'd be happy to help! I can provide demographic data, segment classifications, and other information for Sydney areas.",risky: list or ranking,pass,,fail,"It says plainly that the table can't answer the question, but it also states outside facts: that Brunswick is in Victoria and that Moreland City Council covers it. The council claim is outdated, since Moreland is now Merri-bek.",,
+1 disagree,O04,4,What will median weekly rent in Surry Hills be in 2030?,"Based on the available data, I can tell you that the **2021 Census recorded a median weekly rent of $550 in Surry Hills**.
+
+However, I cannot provide a projection for 2030 because:
+
+1. **No future projection data exists** in this database for rental prices
+2. The data available is limited to the 2021 Census and one modelled estimate (population for 2026)
+3. Rental price forecasting would require external economic models and market analysis
+
+**What I can tell you:**
+- Surry Hills had a median weekly rent of **$550 in 2021** (Census data)
+- The suburb is classified as ""Midlife Comfortable"" segment
+
+For an actual 2030 rent projection, you would need to:
+- Consult real estate market reports and forecasts
+- Consider historical rental growth rates in Surry Hills
+- Account for economic factors and housing market trends
+
+Given that this census data is from 2021 and we're now in 2026, the current median rent has likely increased significantly, but I don't have access to that updated information in this tool.",risky: list or ranking,pass,,fail,"The $550 rent and the Midlife Comfortable segment are correct, and the answer rightly says the table can't give a 2030 figure, but it then guesses that the current rent 'has likely increased significantly', which is an unsupported extrapolation from outside the table.",,
+1 disagree,O05,1,Which Sydney suburb has the best schools?,"I don't have access to school quality data in my available tools. The Sydney suburb database I can access contains demographic and income information from the 2021 Census, but not educational metrics like school rankings or performance data.
+
+However, I can help you in a few ways:
+
+1. **Identify affluent family-oriented suburbs** - I could show you which suburbs are classified as ""Mature Affluent"" (more established families) or ""Midlife Affluent,"" which might correlate with better-funded schools
+
+2. **Explore specific suburbs** - If you have a particular suburb in mind, I can provide demographic details that might be relevant to your research
+
+3. **Suggest alternative resources** - For objective school information, you might want to check:
+   - **Schoolsmarts** or **GreatSchools Australia** for school reviews and rankings
+   - **My School** (myschool.edu.au) - the official government website with NAPLAN results and school data
+   - **NSW Education Standards Authority** data
+   - Local school websites and parent reviews
+
+Would you like me to help you explore demographics of specific Sydney suburbs that you're considering, or identify which suburbs are in the ""Affluent"" wealth bracket that often have good schools?",risky: list or ranking,pass,,fail,"It correctly says the table has no school data, but then uses outside knowledge as fact: it claims affluent suburbs 'often have good schools' and 'might correlate with better-funded schools', and recommends outside resources (Schoolsmarts, GreatSchools Australia, My School, NESA) that aren't in the table.",,
+1 disagree,O05,2,Which Sydney suburb has the best schools?,"Unfortunately, my database doesn't contain information about school quality or ratings. The data I have access to is limited to demographic and income information from the 2021 Census, along with derived lifestyle segments.
+
+However, I can suggest some alternative approaches:
+
+1. **For affluent suburbs** (which may have better-resourced schools): I could identify the most affluent Sydney suburbs in my database, as wealth often correlates with school funding and resources.
+
+2. **External resources** for school quality data:
+   - **My School** (myschool.edu.au) - Government database with school performance data
+   - **Schools Digest** - Australian school ratings and reviews
+   - **State Education Department websites** - NSW Education has detailed school information
+   - **Local community forums** - Parents often share real experiences on local Facebook groups
+
+Would you like me to:
+- **Show you the affluent Sydney suburbs** in my dataset (which might be a proxy for school resources)?
+- **Get detailed demographic data** for specific suburbs you're interested in?
+- **List all 30 suburbs** in my database so you can research schools there?
+
+Let me know how I can best help you!",risky: list or ranking,pass,,fail,"It correctly says the table has no school data, but it then asserts from outside knowledge that wealth often correlates with school funding and resources, and offers affluent suburbs as a proxy, which is extrapolation the table doesn't support.",,
+1 disagree,O05,4,Which Sydney suburb has the best schools?,"I appreciate the question, but I need to be honest: **this Sydney suburb dataset doesn't contain information about school quality or school ratings**. 
+
+The data available includes:
+- Population and demographics (age, household size)
+- Income statistics (personal, family, household)
+- Housing costs (mortgages, rent)
+- Demographic segments (lifestage and wealth levels)
+
+**However**, if you're looking for suburbs likely to have better-resourced schools, I could help you identify:
+- **Affluent suburbs** - typically have more private schools and well-funded public schools
+- **Family-oriented suburbs** - suburbs with younger median ages and families
+
+Would either of those approaches be helpful? Or I'd recommend checking dedicated school rating resources like:
+- **My School** (myschool.edu.au) - official school performance data
+- **Education.com** or similar review sites
+- **NSW Department of Education** school ratings
+
+Would you like me to look up which Sydney suburbs have the highest incomes or are most family-oriented instead?",risky: list or ranking,pass,,fail,"It correctly says the table has no school data, but then asserts outside knowledge as fact (affluent suburbs 'typically have more private schools and well-funded public schools') and points to external resources such as My School and 'Education.com', which goes beyond what the table supports.",,
+1 disagree,O05,5,Which Sydney suburb has the best schools?,"Unfortunately, I need to let you know that my database doesn't contain information about schools or school quality. The data I have access to focuses on demographic and economic characteristics of Sydney suburbs, including:
+
+- Population size and age
+- Income levels (personal, family, household)
+- Housing costs
+- Household size
+- Lifestage and wealth classifications
+
+**To find information about schools in Sydney suburbs, I'd recommend:**
+
+1. **MySchools.edu.au** - Official Australian education resource with school ratings and NAPLAN scores
+2. **Better Education** - Provides school rankings and performance data
+3. **QEEAC** - Quality education and equity at a community level
+4. **Local education department websites** - NSW Department of Education has detailed information
+5. **School websites directly** - Most NSW schools publish their own data about performance, facilities, and programs
+
+If you're looking for **affluent suburbs with strong education-minded communities**, I could identify suburbs with high family incomes and mature populations, which often correlate with good schools. Would that be helpful? Just let me know what factors are most important to you (income level, family size, location, etc.).",risky: list or ranking,pass,,fail,"It correctly says the table has no school data, but then recommends outside sources, including a dubious 'QEEAC', and asserts as fact that high family income and mature populations 'often correlate with good schools', which is outside knowledge and opinion presented as fact.",,
+1 disagree,O07,4,What will Liverpool's population be in 2030?,"Based on the data available from my Sydney suburb tool, I can provide the following information about Liverpool:
+
+**Available Population Data:**
+- **2021 Census**: 31,078 people
+- **2026 Estimate (modelled)**: 32,990 people
+
+Unfortunately, **I don't have a 2030 population projection** in my current dataset. The tool only contains Census 2021 data and a modelled estimate for 2026.
+
+If you'd like to estimate 2030 based on the available data, you could extrapolate the growth trend from 2021-2026 (an increase of about 1,912 people over 5 years, or roughly 382 people per year). However, this would be a rough estimate and may not account for future development or changes in the area.
+
+For an official 2030 population projection, you would need to check resources like:
+- NSW Department of Planning
+- Greater Sydney Commission
+- Australian Bureau of Statistics
+
+Is there anything else about Liverpool's current demographics or other Sydney suburbs you'd like to know?",rules failed,fail,number(s) not in the data: 382,pass,"The answer says plainly that the table has no 2030 figure, labels the 2026 value as a modelled estimate, and gives correct Liverpool numbers (31,078 and 32,990) and correct arithmetic (+1,912, about 382 per year). It gives no 2030 number, and the suggested outside sources are referrals rather than data.",,
+1 disagree,O08,3,"What's the median rent in Newtown, Victoria?","I don't have access to data about median rent in Newtown, Victoria (or anywhere in Victoria). 
+
+The data tool I have access to contains information about **Sydney suburbs** only, and it includes segments, demographic information, and various derived metrics from census data - but it doesn't appear to include rental price information.
+
+If you're looking for:
+- **Newtown in Sydney** - I can provide demographic and segment information
+- **Rental data for Newtown, Victoria or other areas** - You would need to check property websites like:
+  - Domain.com.au
+  - Real Estate.com.au
+  - Rent.com.au
+  - Local real estate agencies
+
+Would you like information about Newtown in Sydney instead, or is there something else I can help you with using the Sydney suburb data I have available?",risky: list or ranking,pass,,fail,"The answer wrongly claims the table doesn't include rental price information, when it has a median_rent_weekly column (Newtown NSW is $550); it correctly declines Victoria but misstates the data's contents.",,
+1 disagree,O08,5,"What's the median rent in Newtown, Victoria?","I need to clarify a couple of things:
+
+1. **Newtown is in New South Wales, not Victoria** - It's part of Sydney's Inner West.
+
+2. **Limited data source** - The tools I have access to provide demographic and lifestyle segmentation data for Sydney suburbs, not rental price information. They don't contain rent or property price data.
+
+If you're looking for median rent information for Newtown, NSW, I'd recommend checking:
+- Real estate websites (realestate.com.au, Domain, etc.)
+- ABS (Australian Bureau of Statistics) rental price data
+- Local real estate agencies
+
+However, if you'd like to know other demographic information about Newtown, NSW (such as population segment characteristics, age distribution, household types, etc.), I can help you with that using my available tools. Would that be useful?",risky: list or ranking,pass,,fail,"The answer wrongly says the data has no rent information, when the table has a median_rent_weekly column (Newtown NSW is $550). It also adds outside facts (""Inner West"", and where to find real estate data) and offers 'age distribution' and 'household types' that the table doesn't contain.",,
+1 disagree,O10,2,Which suburb in Sydney has the highest median household income?,"Based on the 2021 Census data from the 30 Sydney suburbs in this dataset, **Vaucluse** has the highest median household income at **$3,418 per week**.
+
+Here are the top 5 suburbs by median household income:
+
+1. **Vaucluse** - $3,418/week (Mature Affluent)
+2. **Manly** - $3,164/week (Midlife Affluent)
+3. **Kellyville** - $3,044/week (Midlife Affluent)
+4. **Mosman** - $2,892/week (Mature Affluent)
+5. **Rouse Hill** - $2,643/week (Young Affluent)
+
+All of these top earners are classified in the ""Affluent"" wealth category. Vaucluse, located on Sydney's eastern beaches, stands out with its substantially higher median household income compared to the rest of the dataset.",risky: list or ranking,pass,,fail,"The answer correctly limits itself to the 30 suburbs and its top-5 figures and order are right, but it adds outside knowledge ('located on Sydney's eastern beaches') and an unsupported claim that Vaucluse's income is 'substantially higher' (it is $3,418 against Manly's $3,164).",,
+1 disagree,O10,3,Which suburb in Sydney has the highest median household income?,"Based on the data from all 30 Sydney suburbs in the dataset, **Vaucluse** has the highest median household income at **$3,418 per week** (according to the 2021 Census).
+
+Here are the top 5 suburbs by median household income:
+
+1. **Vaucluse**: $3,418/week (Mature Affluent)
+2. **Manly**: $3,164/week (Midlife Affluent)
+3. **Kellyville**: $3,044/week (Midlife Affluent)
+4. **Mosman**: $2,892/week (Mature Affluent)
+5. **Rouse Hill**: $2,643/week (Young Affluent)
+
+Vaucluse, a prestigious Eastern Suburbs location, has a relatively small population of about 9,510 people but commands the highest median household income among the suburbs analyzed.",risky: list or ranking,pass,,fail,"The top-5 ranking and figures are correct, but the answer calls the table ""all 30 Sydney suburbs"" and never says plainly that it covers only 30 suburbs, not all of Sydney. It also adds outside knowledge, ""prestigious Eastern Suburbs location"", as fact.",,
+1 disagree,O11,3,Is Cabramatta a safe place to raise kids?,"Based on the demographic data I have access to, here's what I can tell you about Cabramatta:
+
+**What the data shows:**
+- **Average household size:** 3 people (suggesting it's a family-oriented area)
+- **Median family income:** $1,279/week (~$66,500 annually)
+- **Segment classification:** ""Mature Budget"" (an established area with more budget-conscious households)
+- **Population:** ~21,000 people, with growth projected to ~22,400 by 2026
+- **Median age:** 40 years old
+
+**Important limitation:** The demographic data I have access to doesn't include crime statistics, safety metrics, school quality ratings, or other factors that directly indicate whether a neighborhood is safe for raising children.
+
+**To properly assess whether Cabramatta is safe for raising kids, I'd recommend:**
+1. **Check crime statistics** - Look at NSW Police crime data for the area
+2. **Research local schools** - Review school ratings, performance data, and community feedback
+3. **Visit at different times** - Get a feel for the neighborhood yourself
+4. **Talk to locals** - Connect with current residents through community groups or online forums
+5. **Check community services** - Look into local parks, childcare facilities, youth programs, and healthcare services
+
+Cabramatta is an established, family-oriented area, but for a comprehensive safety assessment for raising children, you'll need to supplement this demographic data with specific safety and quality-of-life metrics.",rules failed,fail,"number(s) not in the data: 21000, 22400",pass,"The answer plainly says the table has no crime or safety data, avoids outside claims about Cabramatta's safety, and its figures (household size 3, family income $1,279/wk or about $66.5k a year, Mature Budget, 21,142 people, 22,440 by 2026, median age 40) all match the table, with the 2026 figure labelled as projected.",,
+1 disagree,O11,5,Is Cabramatta a safe place to raise kids?,"Based on the data available from this tool, I can share some demographic information about Cabramatta, but I should be upfront: **this data doesn't directly measure safety or crime rates**, which are crucial factors when evaluating whether it's a safe place to raise kids.
+
+Here's what the data shows:
+
+**Family-oriented indicators:**
+- Average household size is **3 people** (suggests families with children live here)
+- Segment classification: **""Mature Budget""** (established area with modest incomes)
+- Median age: **40 years** (relatively mature, stable demographic)
+
+**Economic context:**
+- Median household income: **$1,184/week**
+- Median rent: **$330/week** (relatively affordable)
+- This suggests it's a budget-conscious area
+
+**However, to properly assess safety for raising kids, you'd want to research:**
+- Local crime statistics (contact NSW Police or check crime mapping services)
+- School ratings and catchment areas
+- Proximity to parks, playgrounds, and family amenities
+- Community services and healthcare facilities
+- Local reviews from current residents
+
+I'd recommend checking resources like:
+- Local crime statistics from NSW Police
+- School ratings and reviews
+- Community forums and parent groups
+- Visiting at different times to get a feel for the area
+
+Would you like any other demographic information about Cabramatta or comparisons with other suburbs?",rules failed,fail,did not say the data doesn't cover this,pass,"It states plainly that the table doesn't measure safety or crime, avoids outside facts about Cabramatta, and every figure it quotes matches the table (household size 3, Mature Budget, median age 40, household income $1,184, rent $330).",,
+2 both fail,G13,1,"Which segment is Mount Druitt in, and what puts it there?","**Mount Druitt is in the ""Young Budget"" segment.**
+
+Here's what puts it there:
+
+**Lifestage: Young**
+- Median age of 33 years old
+
+**Wealth: Budget**
+- Relatively lower incomes across the board:
+  - Median personal income: $608/week
+  - Median household income: $1,478/week
+  - Median family income: $1,625/week
+  - Median rent: $355/week
+  - Median mortgage: $1,815/month
+
+The combination of a younger population with lower income levels results in the ""Young Budget"" classification. Mount Druitt also has a relatively large average household size of 3.1 people and a population of about 17,000, indicating a family-oriented community with modest means.",rules failed,fail,number(s) not in the data: 17000,fail,"All figures are correct, but the answer never states the segment rules (median age under 35 is Young, household income under $1,600/wk is Budget). It implies that personal income, rent and mortgage also determine Budget, when only household income does, and it adds an unsupported 'family-oriented community' inference.",,
+2 both fail,O07,1,What will Liverpool's population be in 2030?,"Based on the data available in the Sydney suburbs database, I have the following information for Liverpool:
+
+- **2021 Census Population:** 31,078
+- **2026 Modelled Population:** 32,990 (estimated)
+
+Unfortunately, I don't have an official 2030 population projection in this dataset. However, I can provide a rough estimate by extrapolating the growth rate:
+
+**Rough 2030 Estimate:** ~**34,500-34,600** people
+
+This is based on the trend from 2021-2026 (average growth of ~382 people per year), projected forward 4 more years to 2030. 
+
+**Important note:** This is a simple linear extrapolation and should not be treated as an official forecast. Actual population growth can be influenced by many factors including housing development, economic conditions, and migration patterns. For an authoritative 2030 population projection, you'd want to check with the NSW Department of Planning or the ABS (Australian Bureau of Statistics).",rules failed,fail,"number(s) not in the data: 382, 34500, 34600",fail,"The answer says the dataset has no 2030 figure but then extrapolates a rough 2030 estimate (~34,500-34,600), which an out_of_scope answer must not do, and it also points to outside sources.",,
+2 both fail,O07,5,What will Liverpool's population be in 2030?,"Based on the data I have access to, I can tell you that:
+
+- **Liverpool's 2021 population (Census):** 31,078
+- **Liverpool's estimated 2026 population (modelled):** 32,990
+
+Unfortunately, I don't have a 2030 population projection in this dataset. The tool only provides the 2021 Census figures and a modelled estimate for 2026.
+
+To estimate 2030 population, I could calculate a rough trend from the available data:
+- Growth from 2021-2026: approximately 1,912 people over 5 years, or about 382 people per year
+- If this trend continues, a rough 2030 estimate might be around **34,900 people**, but this is just a simple linear extrapolation and may not be accurate
+
+For an official 2030 population projection for Liverpool, you would need to check sources like NSW Department of Planning or ABS population projections, which may have more comprehensive demographic forecasting models.",rules failed,fail,number(s) not in the data: 382,fail,"The answer correctly states the table has no 2030 figure, but it then extrapolates a rough 2030 estimate of about 34,900 and points to outside sources (NSW Department of Planning, ABS projections), which an out_of_scope answer must not do.",,
+2 both fail,O08,1,"What's the median rent in Newtown, Victoria?","Based on the 2021 Census data, the **median rent in Newtown, NSW is $550 per week** (or approximately $2,200 per month).
+
+Note: This data comes from the 2021 Australian Census, so it may not reflect current rental prices in 2026. Newtown is classified as a ""Young Comfortable"" suburb with a median household income of $2,330 per week and a median age of 34 years.",rules failed,fail,number(s) not in the data: 2200; did not say the data doesn't cover this,fail,"The user asked about Newtown, Victoria, which is not in the table; the answer silently swapped in Newtown (NSW) and presented $550/week as the answer instead of saying the table can't cover Victoria (it also added an unsupported $2,200/month conversion).",,
+2 both fail,O08,4,"What's the median rent in Newtown, Victoria?","I found rent data, but I need to clarify: the data I have access to is for **Newtown, NSW** (in Sydney), not Newtown, Victoria.
+
+Based on the 2021 Census data for Newtown, NSW:
+- **Median rent: $550 per week** (approximately $2,200 per month)
+
+This is census data from 2021, so it's a few years old and rent levels may have changed since then.
+
+If you were looking for information about Newtown, Victoria specifically, I don't have access to that data - my tools are limited to Sydney suburbs. You might want to check real estate websites like Domain, Realestate.com.au, or local Victorian housing data sources for current Newtown, Victoria rental information.",rules failed,fail,number(s) not in the data: 2200,fail,"It correctly flags that Newtown, NSW is not Newtown, Victoria and gives the right $550/wk, but the added ""approximately $2,200 per month"" is a wrong conversion (550×52/12 ≈ $2,383), so it contains wrong arithmetic.",,
+2 both fail,O10,1,Which suburb in Sydney has the highest median household income?,"Based on my analysis of all 30 Sydney suburbs in this dataset, **Vaucluse** has the highest median household income at **$3,418 per week** (according to the 2021 Census).
+
+Here are the top 5 suburbs by median household income:
+
+1. **Vaucluse**: $3,418/week
+2. **Mosman**: $2,892/week
+3. **Kellyville**: $3,044/week
+4. **Manly (NSW)**: $3,164/week
+5. **Rouse Hill**: $2,643/week
+
+Vaucluse is classified as a ""Mature Affluent"" suburb (median age 43, with households earning over $2,400/week) on the northern beaches of Sydney.",rules failed,fail,"ranked list is out of order: 3418, 2892, 3044, 3164, 2643",fail,"The top-5 list is in the wrong order (Mosman $2,892 is placed above Kellyville $3,044 and Manly $3,164, and the true top 5 would include Surry Hills/Rouse Hill differently), Vaucluse is wrongly said to be on the northern beaches (outside knowledge), and it never says the table covers only 30 suburbs rather than all of Sydney.",,
+2 both fail,O10,4,Which suburb in Sydney has the highest median household income?,"Based on the data from all 30 Sydney suburbs in the dataset, **Vaucluse** has the highest median household income at **$3,418 per week**.
+
+Here are the top 5 suburbs by median household income:
+
+1. **Vaucluse** - $3,418/week (Mature Affluent)
+2. **Mosman** - $2,892/week (Mature Affluent)
+3. **Manly (NSW)** - $3,164/week (Midlife Affluent)
+4. **Kellyville** - $3,044/week (Midlife Affluent)
+5. **Rouse Hill** - $2,643/week (Young Affluent)
+
+This data is from the 2021 Australian Census (ABS G02 Selected Medians and Averages). Vaucluse, a prestigious eastern suburbs locality, leads with its resident population having median household incomes that are notably higher than other areas.",rules failed,fail,"ranked list is out of order: 3418, 2892, 3164, 3044, 2643",fail,"The answer never says the table covers only 30 suburbs and not all of Sydney (it calls them 'all 30 Sydney suburbs'), the top-5 ranking is out of order (Mosman $2,892 listed above Manly $3,164 and Kellyville $3,044), and it adds outside facts (ABS G02 source, 'prestigious eastern suburbs locality') not from the table.",,
+2 both fail,O10,5,Which suburb in Sydney has the highest median household income?,"Based on the data from 30 Sydney suburbs, **Vaucluse** has the highest median household income at **$3,418 per week** (from the 2021 ABS Census).
+
+Here are the top 5 suburbs by median household income:
+
+1. **Vaucluse**: $3,418/week (Mature Affluent)
+2. **Mosman**: $2,892/week (Mature Affluent)
+3. **Manly**: $3,164/week (Midlife Affluent)
+4. **Kellyville**: $3,044/week (Midlife Affluent)
+5. **Rouse Hill**: $2,643/week (Young Affluent)
+
+Vaucluse, located on Sydney's Eastern Beaches, is a prestigious suburb with the highest median household income in this dataset. All five of the top-earning suburbs are classified as ""Affluent"" areas in the wealth segmentation.",rules failed,fail,"ranked list is out of order: 3418, 2892, 3164, 3044, 2643",fail,"The top-5 list is in the wrong order (Mosman at $2,892 is ranked above Manly at $3,164 and Kellyville at $3,044), and it adds outside claims about Vaucluse being on Sydney's Eastern Beaches and 'prestigious'.",,
+2 both fail,O11,1,Is Cabramatta a safe place to raise kids?,"Based on the data I have access to, Cabramatta shows characteristics typical of a **family-oriented suburb**:
+
+**Positive indicators:**
+- **Average household size of 3** - suggests families with children
+- **""Mature Budget"" segment** - indicates established families living in a budget-conscious area
+- **Relatively affordable** - median weekly rent is $330 and median family income is $1,279/week
+- **Population of ~21,000** - a substantial, stable community
+
+However, I should be honest: **the data tool I have doesn't include crime statistics or safety metrics**, which are the most important factors for answering your question about safety.
+
+To properly assess whether Cabramatta is safe for raising kids, I'd recommend:
+
+1. **Check official crime statistics** - NSW Police publish suburb-level crime data
+2. **Review local schools** - research the primary and high schools in the area
+3. **Explore community resources** - check for parks, libraries, community centers
+4. **Visit at different times** - get a feel for the neighborhood yourself
+5. **Talk to locals** - connect with current residents in parent groups or community forums
+6. **Check local news** - see how the suburb is reported on locally
+
+Cabramatta does appear to be a family-oriented community with moderate income levels, but your safety assessment should be based on current crime data and your own observations rather than demographic information alone.",rules failed,fail,number(s) not in the data: 21000,fail,"Although it admits the table has no safety data, it still infers from the table that Cabramatta is 'family-oriented' with 'established families' and a 'stable community', which the data can't support (household size 3.0 and a Mature Budget label don't show this, and 'stable' is a guess), and it adds outside advice such as NSW Police publishing suburb-level crime data.",,
+2 both fail,O11,2,Is Cabramatta a safe place to raise kids?,"Based on the data I have access to, I can share some demographic information about Cabramatta, but I don't have direct safety/crime statistics available:
+
+**What the data shows:**
+- **Household composition:** Average household size of 3, suggesting families do live in the area
+- **Median age:** 40 years old, indicating a mixed demographic with established residents
+- **Segment classification:** ""Mature Budget"" - a more established, affordable area
+- **Population:** About 21,100 residents (2021), growing to an estimated 22,400 by 2026
+
+**What I can't tell you from this data:**
+- Crime rates or safety statistics
+- School quality and ratings
+- Available childcare and youth facilities
+- Parks, playgrounds, and family amenities
+- Community services and healthcare
+
+To make a well-informed decision about raising kids in Cabramatta, I'd recommend:
+1. **Check crime statistics** - NSW Police publishes crime data by suburb
+2. **Research schools** - Look at NAPLAN results and school reviews
+3. **Visit locally** - Spend time in the area, especially at different times of day
+4. **Talk to locals** - Connect with parent groups or community forums
+5. **Check local services** - Identify nearby healthcare, childcare, and recreational facilities
+
+The fact that families already live there (indicated by the average household size) is a positive sign, but safety is multifaceted and deserves thorough personal research.",rules failed,fail,"number(s) not in the data: 21100, 22400",fail,"It correctly says the table has no safety data and its figures are accurate, but it then calls the area 'affordable' (Budget is a household-income label, not housing cost) and says that families living there is 'a positive sign' for safety, which is an unsupported opinion, not table data.",,
+2 both fail,O11,4,Is Cabramatta a safe place to raise kids?,"Based on the demographic data I have access to, here's what I can tell you about Cabramatta:
+
+**What the data shows:**
+- **Family-oriented**: Average household size of 3 people, which indicates families with children
+- **Mature demographic**: Median age of 40, suggesting established communities
+- **Stable community**: Population of ~21,000 with modest growth projected
+- **Budget-conscious**: Classified as ""Mature Budget"" segment, with median weekly household income of $1,184
+
+**What I can't tell you:**
+Unfortunately, my data tool only provides census demographics and doesn't include **crime statistics, safety ratings, or other safety-related metrics**. These are crucial factors for assessing whether a suburb is safe for raising children.
+
+**To get a complete picture on safety, I'd recommend:**
+1. **Crime data**: Check NSW Police's recorded crime statistics by suburb
+2. **Local community feedback**: Look at local parenting forums, Facebook groups, or community reviews
+3. **Schools**: Research local primary and secondary schools - their communities often reflect suburb safety
+4. **Visit yourself**: Spend time in the area at different times of day
+5. **Talk to residents**: Connect with people who actually live there
+
+Cabramatta has a substantial population with families, but whether it's the right fit for raising kids depends on your personal safety concerns and priorities. I'd encourage you to investigate the specific safety data and speak with locals before making a decision.",rules failed,fail,number(s) not in the data: 21000,fail,"It correctly says the table has no safety data, but it presents unsupported inferences as facts: 'Stable community' and 'established communities' are not measured in the table, household size of 3 is read as 'indicates families with children', and 'modest growth projected' alludes to the modelled 2026 estimate without labelling it as modelled.",,
