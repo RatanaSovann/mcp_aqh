@@ -13,10 +13,13 @@ A tiny local **MCP server** that serves a small Sydney suburb table built from t
 ```bash
 pip install -r requirements.txt
 python -m pytest -q                     # checks the server and scorer, no API key needed
-export ANTHROPIC_API_KEY=sk-ant-...     # your key from console.anthropic.com
 python eval/run_eval.py                 # Claude Haiku 4.5, plain prompt
 python eval/run_eval.py --prompt guarded
 ```
+
+By default the eval runs the model through the **Claude Code CLI** (`claude -p`), using the login Claude Code already has. That means it works in a Claude Code cloud session or on a laptop with Claude Code installed, with no API key. To use an API key instead: `export ANTHROPIC_API_KEY=sk-ant-...` and add `--backend sdk`.
+
+Latest results: [`results/SUMMARY.md`](results/SUMMARY.md).
 
 Each run writes `results/run_<model>_<prompt>.jsonl` (raw answers) and `results/scorecard_<model>_<prompt>.md` (the results table with failure examples).
 
@@ -52,7 +55,7 @@ To use it in Claude Desktop, add it to `claude_desktop_config.json`:
 ## The eval (`eval/`)
 
 - `questions.json`: 20 questions. 8 grounded, 6 modelled, 6 out of scope.
-- `run_eval.py`: starts the server, gives its tools to the model, runs each question.
+- `run_eval.py`: gives the model the server as its only tool and runs each question (`--backend cli` or `sdk`).
 - `score.py`: rule-based scorer.
   - Grounded: expected numbers/names appear, and **every number in the answer exists in the data** (or in the question).
   - Modelled: same, plus words like "modelled", "estimate" or "projected".
