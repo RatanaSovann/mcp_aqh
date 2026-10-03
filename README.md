@@ -21,7 +21,7 @@ By default the eval runs the model through the **Claude Code CLI** (`claude -p`)
 
 Latest results: [`results/SUMMARY.md`](results/SUMMARY.md).
 
-Each run writes `results/run_<model>_<prompt>.jsonl` (raw answers) and `results/scorecard_<model>_<prompt>.md` (the results table with failure examples).
+Each run gets its own folder, `results/<date>_<time>_<model>_<prompt>/`, holding `run.jsonl` (raw answers) and `scorecard.md` (the results table with failure examples). Every run also adds one row to `results/history.md`, so you can watch the scores change as the project grows. To save somewhere else, pass `--out-dir <folder>` or set `EVAL_RESULTS_DIR`.
 
 ## The data (`data/`)
 

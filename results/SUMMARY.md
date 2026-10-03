@@ -1,6 +1,6 @@
 # Eval results: Claude Haiku 4.5, 2026-10-03
 
-Run in a Claude Code cloud session with `python eval/run_eval.py --prompt plain` and `--prompt guarded` (CLI backend, `claude -p`, MCP server as the only tool). Full answers are in the `run_*.jsonl` files; per-prompt tables with failure examples are in the `scorecard_*.md` files.
+Run in a Claude Code cloud session with `python eval/run_eval.py --prompt plain` and `--prompt guarded` (CLI backend, `claude -p`, MCP server as the only tool). Each run has its own folder with `run.jsonl` (full answers) and `scorecard.md` (table plus failure examples). [`history.md`](history.md) has one row per run.
 
 | Check | Plain prompt | Guarded prompt |
 |---|---|---|

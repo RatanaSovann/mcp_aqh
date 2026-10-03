@@ -8,7 +8,10 @@ Two ways to reach the model (--backend):
 - sdk: the Anthropic Python SDK. Starts server.py itself, hands its tools to the
   model and runs each tool call back through the server. Needs ANTHROPIC_API_KEY.
 
-Answers are saved as JSON lines, then scored with eval/score.py.
+Each run gets its own dated folder (answers as JSON lines, plus the scorecard
+from eval/score.py), and one row is added to history.md so you can see scores
+change as the project grows. Results go to results/ unless you pass --out-dir
+or set EVAL_RESULTS_DIR (e.g. a shared project folder).
 
 Run:    python eval/run_eval.py                      # Haiku 4.5, plain prompt
         python eval/run_eval.py --prompt guarded     # with grounding rules
@@ -21,6 +24,7 @@ import asyncio
 import json
 import os
 import subprocess
+from datetime import datetime, timezone
 import sys
 import tempfile
 from concurrent.futures import ThreadPoolExecutor
@@ -28,7 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "eval"))
-from score import build_scorecard  # noqa: E402
+from score import build_scorecard, score_answer  # noqa: E402
 
 PROMPTS = {
     # What a typical connector user gets: no special instructions.
@@ -158,12 +162,63 @@ async def run_sdk(questions, model, system) -> list[tuple[str, list]]:
             ]
 
 
+HISTORY_HEADER = [
+    "# Eval history",
+    "",
+    "One row per run, newest last. Click a run folder for its scorecard and raw answers.",
+    "",
+    "| When (UTC) | Model | Prompt | Code version | Grounded | Modelled | Out of scope | Overall | Run |",
+    "|---|---|---|---|---|---|---|---|---|",
+]
+
+
+def git_version() -> str:
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(ROOT), "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        dirty = subprocess.run(
+            ["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"],
+            capture_output=True, text=True,
+        ).stdout.strip()
+        return out + ("+edits" if dirty else "")
+    except (OSError, subprocess.CalledProcessError):
+        return "?"
+
+
+def add_history_row(out_dir: Path, run_dir: Path, records: list[dict], when: str, version: str) -> None:
+    scored = [score_answer(r["id"], r["answer"]) for r in records]
+
+    def tally(cat=None):
+        rows = [s for s in scored if cat is None or s["category"] == cat]
+        return f"{sum(s['passed'] for s in rows)}/{len(rows)}"
+
+    history = out_dir / "history.md"
+    if not history.exists():
+        history.write_text("\n".join(HISTORY_HEADER) + "\n")
+    r = records[0]
+    row = [
+        when, r["model"], r["prompt"], version,
+        tally("grounded"), tally("modelled"), tally("out_of_scope"), f"**{tally()}**",
+        f"[{run_dir.name}]({run_dir.name}/scorecard.md)",
+    ]
+    with history.open("a") as f:
+        f.write("| " + " | ".join(row) + " |\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="claude-haiku-4-5-20251001")
     parser.add_argument("--prompt", choices=PROMPTS, default="plain")
     parser.add_argument("--backend", choices=["cli", "sdk"], default="cli")
+    parser.add_argument(
+        "--out-dir", type=Path,
+        default=Path(os.environ.get("EVAL_RESULTS_DIR", ROOT / "results")),
+    )
     args = parser.parse_args()
+    started = datetime.now(timezone.utc)
+    version = git_version()
 
     questions = json.loads((ROOT / "eval" / "questions.json").read_text())
     system = PROMPTS[args.prompt]
@@ -172,22 +227,27 @@ def main() -> None:
     else:
         answers = asyncio.run(run_sdk(questions, args.model, system))
 
-    out_dir = ROOT / "results"
-    out_dir.mkdir(exist_ok=True)
-    run_path = out_dir / f"run_{args.model}_{args.prompt}.jsonl"
+    run_dir = args.out_dir / f"{started:%Y-%m-%d_%H%M}_{args.model}_{args.prompt}"
+    run_dir.mkdir(parents=True, exist_ok=True)
+    run_path = run_dir / "run.jsonl"
+    records = [
+        {
+            "id": q["id"], "model": args.model, "prompt": args.prompt,
+            "backend": args.backend, "code_version": version,
+            "answer": answer, "tool_calls": calls,
+        }
+        for q, (answer, calls) in zip(questions, answers)
+    ]
     with run_path.open("w") as f:
-        for q, (answer, calls) in zip(questions, answers):
-            record = {
-                "id": q["id"], "model": args.model, "prompt": args.prompt,
-                "backend": args.backend, "answer": answer, "tool_calls": calls,
-            }
+        for record in records:
             f.write(json.dumps(record) + "\n")
-            print(f"{q['id']}: {answer[:80]!r}")
+            print(f"{record['id']}: {record['answer'][:80]!r}")
 
     card = build_scorecard(run_path)
-    card_path = run_path.with_name(run_path.name.replace("run_", "scorecard_")).with_suffix(".md")
-    card_path.write_text(card + "\n")
+    (run_dir / "scorecard.md").write_text(card + "\n")
+    add_history_row(args.out_dir, run_dir, records, f"{started:%Y-%m-%d %H:%M}", version)
     print("\n" + card)
+    print(f"\nSaved to {run_dir}; history in {args.out_dir / 'history.md'}")
 
 
 if __name__ == "__main__":
